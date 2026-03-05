@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "skills": "Skills",
+    "parcours": "Background",
+    "projects": "Projects",
+    "contact": "Contact",
+    "skipToContent": "Skip to main content"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Mihai Gaina",
+    "title": "GIS Developer / Geomatician",
+    "subtitle": "From computer science to field instrumentation, from sensors to maps — I turn geospatial data into practical solutions.",
+    "cta": "View my projects",
+    "cv": "Download CV"
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Technologies and tools I work with"
+  },
+  "parcours": {
+    "title": "Background",
+    "description": "My professional and academic journey",
+    "items": {
+      "master": {
+        "title": "Master's in Geomatics",
+        "place": "Université Paris 8",
+        "description": "Spatial analysis, remote sensing, GIS, geospatial application development."
+      },
+      "socotec": {
+        "title": "Survey Technician & Instrumentation",
+        "place": "Socotec Monitoring (ex-Cementys)",
+        "description": "Structural monitoring, sensor instrumentation, field acquisition, geodetic data processing."
+      },
+      "licence": {
+        "title": "Bachelor's in Biomedical Engineering",
+        "place": "Technical University of Moldova",
+        "description": "Electronics, sensors, programming, biomedical signal processing."
+      },
+      "colegiul": {
+        "title": "Computer Science",
+        "place": "Colegiul Politehnic",
+        "description": "Programming, networks, databases, operating systems."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Selected works",
+    "items": {
+      "analyseSpatiale": {
+        "title": "Multi-Criteria Spatial Analysis",
+        "description": "Identification of optimal zones using multi-criteria weighting in QGIS and PostGIS."
+      },
+      "teledetection": {
+        "title": "Sentinel-2 Remote Sensing",
+        "description": "Satellite image analysis for vegetation monitoring (NDVI) using SNAP and Python."
+      },
+      "cladPrimeco": {
+        "title": "Clad-Primeco",
+        "description": "Business website with admin dashboard, content management and e-commerce."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Let's talk about your project",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

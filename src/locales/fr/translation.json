@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "skills": "Compétences",
+    "parcours": "Parcours",
+    "projects": "Projets",
+    "contact": "Contact",
+    "skipToContent": "Aller au contenu principal"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Mihai Gaina",
+    "title": "Développeur SIG / Géomaticien",
+    "subtitle": "De l'informatique à l'instrumentation terrain, du capteur à la carte — je transforme les données géospatiales en solutions concrètes.",
+    "cta": "Voir mes projets",
+    "cv": "Télécharger CV"
+  },
+  "skills": {
+    "title": "Compétences",
+    "description": "Technologies et outils que je maîtrise"
+  },
+  "parcours": {
+    "title": "Parcours",
+    "description": "Mon parcours professionnel et académique",
+    "items": {
+      "master": {
+        "title": "Master Géomatique",
+        "place": "Université Paris 8",
+        "description": "Analyse spatiale, télédétection, SIG, développement d'applications géospatiales."
+      },
+      "socotec": {
+        "title": "Technicien Géomètre & Instrumentation",
+        "place": "Socotec Monitoring (ex-Cementys)",
+        "description": "Monitoring structurel, instrumentation de capteurs, acquisitions terrain, traitement de données géodésiques."
+      },
+      "licence": {
+        "title": "Licence Ingénierie Biomédicale",
+        "place": "Universitatea Tehnică a Moldovei",
+        "description": "Électronique, capteurs, programmation, traitement du signal appliqué au biomédical."
+      },
+      "colegiul": {
+        "title": "Informatique",
+        "place": "Colegiul Politehnic",
+        "description": "Programmation, réseaux, bases de données, systèmes d'exploitation."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "description": "Sélection de réalisations",
+    "items": {
+      "analyseSpatiale": {
+        "title": "Analyse Spatiale Multicritère",
+        "description": "Identification de zones optimales via pondération multicritère sous QGIS et PostGIS."
+      },
+      "teledetection": {
+        "title": "Télédétection Sentinel-2",
+        "description": "Analyse d'images satellites pour le suivi de la végétation (NDVI) avec SNAP et Python."
+      },
+      "cladPrimeco": {
+        "title": "Clad-Primeco",
+        "description": "Site web d'entreprise avec dashboard admin, gestion de contenu et e-commerce."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Parlons de votre projet",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
+}

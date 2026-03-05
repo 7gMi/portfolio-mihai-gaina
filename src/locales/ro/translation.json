@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "skills": "Competențe",
+    "parcours": "Parcurs",
+    "projects": "Proiecte",
+    "contact": "Contact",
+    "skipToContent": "Salt la conținutul principal"
+  },
+  "hero": {
+    "greeting": "Bună, sunt",
+    "name": "Mihai Gaina",
+    "title": "Dezvoltator SIG / Geomatician",
+    "subtitle": "De la informatică la instrumentație de teren, de la senzor la hartă — transform datele geospațiale în soluții concrete.",
+    "cta": "Vezi proiectele",
+    "cv": "Descarcă CV"
+  },
+  "skills": {
+    "title": "Competențe",
+    "description": "Tehnologii și instrumente pe care le stăpânesc"
+  },
+  "parcours": {
+    "title": "Parcurs",
+    "description": "Parcursul meu profesional și academic",
+    "items": {
+      "master": {
+        "title": "Master Geomatică",
+        "place": "Université Paris 8",
+        "description": "Analiză spațială, teledetecție, SIG, dezvoltare de aplicații geospațiale."
+      },
+      "socotec": {
+        "title": "Tehnician Topograf & Instrumentație",
+        "place": "Socotec Monitoring (ex-Cementys)",
+        "description": "Monitorizare structurală, instrumentație senzori, achiziții teren, prelucrare date geodezice."
+      },
+      "licence": {
+        "title": "Licență Inginerie Biomedicală",
+        "place": "Universitatea Tehnică a Moldovei",
+        "description": "Electronică, senzori, programare, prelucrare semnal aplicată la biomedical."
+      },
+      "colegiul": {
+        "title": "Informatică",
+        "place": "Colegiul Politehnic",
+        "description": "Programare, rețele, baze de date, sisteme de operare."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proiecte",
+    "description": "Lucrări selectate",
+    "items": {
+      "analyseSpatiale": {
+        "title": "Analiză Spațială Multicriterială",
+        "description": "Identificarea zonelor optime prin ponderare multicriterială în QGIS și PostGIS."
+      },
+      "teledetection": {
+        "title": "Teledetecție Sentinel-2",
+        "description": "Analiza imaginilor satelitare pentru monitorizarea vegetației (NDVI) cu SNAP și Python."
+      },
+      "cladPrimeco": {
+        "title": "Clad-Primeco",
+        "description": "Site web de afaceri cu panou de administrare, gestionare conținut și e-commerce."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Să discutăm despre proiectul tău",
+    "name": "Nume",
+    "email": "Email",
+    "message": "Mesaj",
+    "send": "Trimite"
+  },
+  "footer": {
+    "rights": "Toate drepturile rezervate."
+  }
+}
