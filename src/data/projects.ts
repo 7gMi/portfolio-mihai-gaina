@@ -27,6 +27,18 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'dengue-girardot',
+    titleKey: 'projects.items.dengueGirardot.title',
+    descriptionKey: 'projects.items.dengueGirardot.description',
+    longDescriptionKey: 'projects.items.dengueGirardot.longDescription',
+    category: 'geomatique',
+    tags: ['ArcGIS Pro', 'SaTScan', 'Getis-Ord Gi*', "Moran's I", 'SIVIGILA', 'Python'],
+    image: '/images/projets/geomatique/dengue-girardot.png',
+    report: '/reports/analyse-dengue-girardot.pdf',
+    date: '2026',
+    featured: true,
+  },
+  {
     id: 'teledetection',
     titleKey: 'projects.items.teledetection.title',
     descriptionKey: 'projects.items.teledetection.description',

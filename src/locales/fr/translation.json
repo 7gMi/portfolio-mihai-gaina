@@ -119,6 +119,11 @@
         "title": "Clad-Primeco",
         "description": "Site web d'entreprise avec dashboard admin, gestion de contenu et e-commerce.",
         "longDescription": "Développement complet d'un site web professionnel pour l'entreprise Clad-Primeco, incluant un dashboard d'administration, la gestion de contenu et des fonctionnalités e-commerce.\n\nStack technique : React 18 avec TypeScript, Tailwind CSS pour le styling, Supabase pour le backend (authentification, base de données PostgreSQL, Edge Functions). Le site intègre un système de contact sécurisé avec Resend pour les emails et hCaptcha pour la protection anti-spam.\n\nLe déploiement est assuré via Vercel avec un pipeline CI/CD automatisé."
+      },
+      "dengueGirardot": {
+        "title": "Analyse Spatio-temporelle de la Dengue — Girardot, Colombie",
+        "description": "Étude de la répartition spatiale et de la dynamique épidémique de la dengue à Girardot (2013–2015). Autocorrélation spatiale (Moran's I, Getis-Ord Gi*) et détection de clusters spatio-temporels (SaTScan) sur 2 730 cas géocodés. Projet M1 Géomatique, Université Paris 8.",
+        "longDescription": "Ce projet de Master 1 Géomatique à l'Université Paris 8 analyse la répartition spatiale et la dynamique épidémique de la dengue à Girardot (Colombie) entre 2013 et 2015, à partir de 2 730 cas géocodés issus du système SIVIGILA.\n\nL'approche combine deux méthodes complémentaires : l'autocorrélation spatiale (Moran's I global et Getis-Ord Gi*) pour identifier les facteurs structurels et les hotspots/coldspots, et l'analyse spatio-temporelle via SaTScan pour détecter les clusters épidémiques (fenêtre 250 m × 45 jours).\n\nLes résultats révèlent une autocorrélation spatiale hautement significative (I = 0,682 à 150 m, p < 0,001) avec 369 hotspots persistants entre 2013 et 2015, concentrés dans quatre quartiers prioritaires (La Esperanza, Las Acacias, Portachuello, Vivisol). SaTScan identifie 7 clusters significatifs en 2013 et 6 en 2015, avec un calendrier reproductible démarrant en janvier.\n\nLes recommandations incluent un système d'alerte précoce basé sur la surveillance SaTScan hebdomadaire et une priorisation spatiale des interventions de santé publique."
       }
     }
   },

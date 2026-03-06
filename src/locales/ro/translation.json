@@ -119,6 +119,11 @@
         "title": "Clad-Primeco",
         "description": "Site web de afaceri cu panou de administrare, gestionare conținut și e-commerce.",
         "longDescription": "Dezvoltarea completă a unui site web profesional pentru compania Clad-Primeco, incluzând un panou de administrare, gestionarea conținutului și funcționalități e-commerce.\n\nStack tehnic: React 18 cu TypeScript, Tailwind CSS pentru styling, Supabase pentru backend (autentificare, bază de date PostgreSQL, Edge Functions). Site-ul integrează un sistem de contact securizat cu Resend pentru emailuri și hCaptcha pentru protecția anti-spam.\n\nDeploymentul este asigurat prin Vercel cu un pipeline CI/CD automatizat."
+      },
+      "dengueGirardot": {
+        "title": "Analiză Spațio-temporală a Dengue — Girardot, Columbia",
+        "description": "Studiul distribuției spațiale și al dinamicii epidemice a dengue la Girardot (2013–2015). Autocorelație spațială (Moran's I, Getis-Ord Gi*) și detectarea clusterelor spațio-temporale (SaTScan) pe 2 730 cazuri geocodificate. Proiect M1 Geomatică, Université Paris 8.",
+        "longDescription": "Acest proiect de Master 1 Geomatică la Université Paris 8 analizează distribuția spațială și dinamica epidemică a dengue la Girardot (Columbia) între 2013 și 2015, pornind de la 2 730 de cazuri geocodificate din sistemul SIVIGILA.\n\nAbordarea combină două metode complementare: autocorelația spațială (Moran's I global și Getis-Ord Gi*) pentru identificarea factorilor structurali și a hotspot-urilor/coldspot-urilor, și analiza spațio-temporală prin SaTScan pentru detectarea clusterelor epidemice (fereastră 250 m × 45 zile).\n\nRezultatele relevă o autocorelație spațială semnificativă (I = 0,682 la 150 m, p < 0,001) cu 369 hotspot-uri persistente între 2013 și 2015, concentrate în patru cartiere prioritare (La Esperanza, Las Acacias, Portachuello, Vivisol). SaTScan identifică 7 clustere semnificative în 2013 și 6 în 2015, cu un calendar reproductibil începând din ianuarie.\n\nRecomandările includ un sistem de alertă precoce bazat pe supravegherea SaTScan săptămânală și prioritizarea spațială a intervențiilor de sănătate publică."
       }
     }
   },

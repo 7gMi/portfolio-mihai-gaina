@@ -119,6 +119,11 @@
         "title": "Clad-Primeco",
         "description": "Business website with admin dashboard, content management and e-commerce.",
         "longDescription": "Full development of a professional website for the Clad-Primeco company, including an administration dashboard, content management and e-commerce features.\n\nTech stack: React 18 with TypeScript, Tailwind CSS for styling, Supabase for backend (authentication, PostgreSQL database, Edge Functions). The site integrates a secure contact system with Resend for emails and hCaptcha for anti-spam protection.\n\nDeployment is handled via Vercel with an automated CI/CD pipeline."
+      },
+      "dengueGirardot": {
+        "title": "Spatio-temporal Analysis of Dengue — Girardot, Colombia",
+        "description": "Study of the spatial distribution and epidemic dynamics of dengue in Girardot (2013–2015). Spatial autocorrelation (Moran's I, Getis-Ord Gi*) and spatio-temporal cluster detection (SaTScan) on 2,730 geocoded cases. M1 Geomatics project, Université Paris 8.",
+        "longDescription": "This Master 1 Geomatics project at Université Paris 8 analyzes the spatial distribution and epidemic dynamics of dengue in Girardot (Colombia) between 2013 and 2015, using 2,730 geocoded cases from the SIVIGILA surveillance system.\n\nThe approach combines two complementary methods: spatial autocorrelation (global Moran's I and Getis-Ord Gi*) to identify structural factors and hotspots/coldspots, and spatio-temporal analysis via SaTScan to detect epidemic clusters (250 m × 45-day window).\n\nResults reveal highly significant spatial autocorrelation (I = 0.682 at 150 m, p < 0.001) with 369 persistent hotspots between 2013 and 2015, concentrated in four priority neighborhoods (La Esperanza, Las Acacias, Portachuello, Vivisol). SaTScan identifies 7 significant clusters in 2013 and 6 in 2015, with a reproducible calendar starting in January.\n\nRecommendations include an early warning system based on weekly SaTScan surveillance and spatial prioritization of public health interventions."
       }
     }
   },
