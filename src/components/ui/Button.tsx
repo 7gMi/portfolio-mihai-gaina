@@ -18,7 +18,7 @@ type ButtonProps = AsButton | AsLink;
 
 const styles: Record<Variant, string> = {
   primary:
-    'bg-primary text-bg-base hover:brightness-110 focus-visible:ring-primary/50',
+    'bg-primary text-text-inverted hover:brightness-110 focus-visible:ring-primary/50',
   outline:
     'border border-primary text-primary hover:bg-primary/10 focus-visible:ring-primary/50',
 };

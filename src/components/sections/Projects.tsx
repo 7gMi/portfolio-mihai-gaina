@@ -15,7 +15,7 @@ export function Projects() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="group overflow-hidden rounded-xl border border-white/5 bg-bg-card transition-colors hover:border-primary/20"
+              className="group overflow-hidden rounded-xl border border-border-default bg-bg-card shadow-card hover:shadow-card-hover hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-150"
             >
               {/* Image placeholder */}
               <div className="aspect-video bg-bg-surface flex items-center justify-center text-text-muted text-sm">

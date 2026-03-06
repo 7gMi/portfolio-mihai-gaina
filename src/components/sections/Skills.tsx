@@ -23,7 +23,7 @@ export function Skills() {
           {skillCategories.map((cat) => (
             <div
               key={cat.key}
-              className="rounded-xl border border-white/5 bg-bg-card p-6 transition-colors hover:border-primary/20"
+              className="rounded-xl border border-border-default bg-bg-card p-6 shadow-card hover:shadow-card-hover hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-150"
             >
               <h3 className="mb-4 text-lg font-semibold text-text-primary">
                 {categoryLabels[cat.key]?.[lang] ?? cat.key}

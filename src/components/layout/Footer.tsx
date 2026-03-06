@@ -6,7 +6,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-bg-base py-8">
+    <footer className="border-t border-border-default bg-bg-subtle py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 sm:flex-row sm:justify-between sm:px-6">
         <p className="text-sm text-text-muted">
           &copy; {year} Mihai Gaina. {t('footer.rights')}

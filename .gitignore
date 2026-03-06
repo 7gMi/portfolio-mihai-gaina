@@ -25,3 +25,5 @@ dist-ssr
 
 # Personal documents (CV, letters, project briefs)
 brief/
+
+.vercel

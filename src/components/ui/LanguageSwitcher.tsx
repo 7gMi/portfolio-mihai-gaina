@@ -18,7 +18,7 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
           aria-current={i18n.language === lng ? 'true' : undefined}
           className={`rounded px-2 py-1 text-xs font-semibold uppercase transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
             i18n.language === lng
-              ? 'bg-primary text-bg-base'
+              ? 'bg-primary text-text-inverted'
               : 'text-text-secondary hover:text-text-primary'
           }`}
         >

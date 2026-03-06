@@ -45,7 +45,7 @@ export function Navbar() {
       {/* Skip link */}
       <a
         href="#hero"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-bg-base"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-text-inverted"
       >
         {t('nav.skipToContent')}
       </a>
@@ -53,7 +53,7 @@ export function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-bg-surface/80 shadow-lg backdrop-blur-md'
+            ? 'bg-bg-base/80 shadow-nav backdrop-blur-md'
             : 'bg-transparent'
         }`}
       >
@@ -115,7 +115,7 @@ export function Navbar() {
         />
       )}
       <div
-        className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col bg-bg-surface p-6 pt-20 shadow-xl transition-transform duration-300 md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col bg-bg-card p-6 pt-20 shadow-xl transition-transform duration-300 md:hidden ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
