@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDown, Download, Github, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '../ui/Button';
@@ -65,14 +66,13 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <Button
-            onClick={() =>
-              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-            }
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-sm transition-all duration-150 bg-primary text-text-inverted hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
             {t('hero.cta')}
             <ArrowDown size={16} />
-          </Button>
+          </Link>
           <Button
             variant="outline"
             href={cvMap[lang] || cvMap.fr}

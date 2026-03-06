@@ -1,21 +1,27 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
-import { useActiveSection } from '../../hooks/useActiveSection';
 
 const NAV_ITEMS = [
-  { id: 'skills', key: 'nav.skills' },
-  { id: 'parcours', key: 'nav.parcours' },
-  { id: 'projects', key: 'nav.projects' },
-  { id: 'contact', key: 'nav.contact' },
+  { to: '/', key: 'nav.home' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/resume', key: 'nav.resume' },
+  { to: '/portfolio', key: 'nav.portfolio' },
+  { to: '/contact', key: 'nav.contact' },
 ] as const;
 
 export function Navbar() {
   const { t } = useTranslation();
-  const activeSection = useActiveSection();
+  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const isActive = (to: string) => {
+    if (to === '/') return pathname === '/';
+    return pathname.startsWith(to);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -23,13 +29,10 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNav = useCallback(
-    (id: string) => {
-      setMenuOpen(false);
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    },
-    []
-  );
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -44,7 +47,7 @@ export function Navbar() {
     <>
       {/* Skip link */}
       <a
-        href="#hero"
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-text-inverted"
       >
         {t('nav.skipToContent')}
@@ -62,31 +65,31 @@ export function Navbar() {
           aria-label="Main navigation"
         >
           {/* Logo */}
-          <button
-            onClick={() => handleNav('hero')}
+          <Link
+            to="/"
             className="text-xl font-bold text-primary transition-colors duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
           >
             MG
-          </button>
+          </Link>
 
           {/* Desktop links */}
           <ul className="hidden items-center gap-1 md:flex">
-            {NAV_ITEMS.map(({ id, key }) => (
-              <li key={id}>
-                <button
-                  onClick={() => handleNav(id)}
-                  aria-current={activeSection === id ? 'true' : undefined}
+            {NAV_ITEMS.map(({ to, key }) => (
+              <li key={to}>
+                <Link
+                  to={to}
+                  aria-current={isActive(to) ? 'page' : undefined}
                   className={`rounded-md px-4 py-2 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
-                    activeSection === id
+                    isActive(to)
                       ? 'text-primary'
                       : 'text-text-secondary hover:text-text-primary'
                   }`}
                 >
                   {t(key)}
-                  {activeSection === id && (
+                  {isActive(to) && (
                     <span className="mt-0.5 block h-0.5 rounded-full bg-primary" />
                   )}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
@@ -106,7 +109,7 @@ export function Navbar() {
         </nav>
       </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer backdrop */}
       {menuOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/50 md:hidden"
@@ -114,6 +117,8 @@ export function Navbar() {
           aria-hidden="true"
         />
       )}
+
+      {/* Mobile drawer */}
       <div
         className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col bg-bg-card p-6 pt-20 shadow-xl transition-transform duration-300 md:hidden ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -121,18 +126,18 @@ export function Navbar() {
       >
         <LanguageSwitcher className="mb-6" />
         <ul className="flex flex-col gap-2">
-          {NAV_ITEMS.map(({ id, key }) => (
-            <li key={id}>
-              <button
-                onClick={() => handleNav(id)}
-                className={`w-full rounded-md px-4 py-3 text-left text-base font-medium transition-colors ${
-                  activeSection === id
+          {NAV_ITEMS.map(({ to, key }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                className={`block w-full rounded-md px-4 py-3 text-left text-base font-medium transition-colors ${
+                  isActive(to)
                     ? 'bg-primary/10 text-primary'
                     : 'text-text-secondary hover:text-text-primary'
                 }`}
               >
                 {t(key)}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>

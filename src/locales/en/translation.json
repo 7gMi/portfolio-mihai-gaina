@@ -1,5 +1,9 @@
 {
   "nav": {
+    "home": "Home",
+    "about": "About",
+    "resume": "Resume",
+    "portfolio": "Portfolio",
     "skills": "Skills",
     "parcours": "Background",
     "projects": "Projects",
@@ -10,9 +14,62 @@
     "greeting": "Hi, I'm",
     "name": "Mihai Gaina",
     "title": "GIS Developer / Geomatician",
-    "subtitle": "From computer science to field instrumentation, from sensors to maps — I turn geospatial data into practical solutions.",
+    "subtitle": "From computer science to field instrumentation, from sensors to maps -- I turn geospatial data into practical solutions.",
     "cta": "View my projects",
     "cv": "Download CV"
+  },
+  "home": {
+    "featuredTitle": "Featured Projects",
+    "featuredDescription": "Some recent achievements",
+    "viewAllProjects": "View all projects"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "Passionate geomatician and GIS developer, I combine expertise in spatial analysis, remote sensing and web development to transform geospatial data into practical solutions. Holder of a Master's degree in Geomatics (Universite Paris 8) and experienced in field instrumentation at Socotec Monitoring, I master the entire geographic data processing chain.",
+    "photoPlaceholder": "Photo",
+    "interestsTitle": "Research Interests",
+    "interestsDescription": "Areas I am passionate about and in which I develop my expertise",
+    "interests": {
+      "geomatics": "Geomatics",
+      "gis": "Geographic Information Systems",
+      "remoteSensing": "Remote Sensing",
+      "webDev": "Web Development",
+      "instrumentation": "Instrumentation"
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "download": "Download CV",
+    "keySkills": "Key Skills",
+    "languagesTitle": "Languages",
+    "languages": {
+      "french": "French",
+      "frenchLevel": "Fluent (C1)",
+      "english": "English",
+      "englishLevel": "Intermediate (B2)",
+      "romanian": "Romanian",
+      "romanianLevel": "Native language"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "All my projects",
+    "filterLabel": "Filter by category",
+    "filterAll": "All",
+    "filterGeo": "Geomatics",
+    "filterDev": "Web Dev",
+    "filterBio": "Biomedical",
+    "noResults": "No projects in this category.",
+    "imagePlaceholder": "Image coming soon"
+  },
+  "projectDetail": {
+    "backToPortfolio": "Back to portfolio",
+    "sourceCode": "Source code",
+    "liveDemo": "Live demo",
+    "report": "Report",
+    "previous": "Previous",
+    "next": "Next",
+    "projectNavigation": "Project navigation"
   },
   "skills": {
     "title": "Skills",
@@ -24,7 +81,7 @@
     "items": {
       "master": {
         "title": "Master's in Geomatics",
-        "place": "Université Paris 8",
+        "place": "Universite Paris 8",
         "description": "Spatial analysis, remote sensing, GIS, geospatial application development."
       },
       "socotec": {
@@ -49,16 +106,19 @@
     "description": "Selected works",
     "items": {
       "analyseSpatiale": {
-        "title": "Multi-Criteria Spatial Analysis — Saint-Étienne",
-        "description": "Identifying optimal zones for real estate investment and student housing in Saint-Étienne. AHP weighting + WLC aggregation on 5 criteria (land value, flood risk, proximity to universities/stations/bars) using ArcGIS Pro and IDRISI. M1 Geomatics project, Université Paris 8."
+        "title": "Multi-Criteria Spatial Analysis -- Saint-Etienne",
+        "description": "Identifying optimal zones for real estate investment and student housing in Saint-Etienne. AHP weighting + WLC aggregation on 5 criteria (land value, flood risk, proximity to universities/stations/bars) using ArcGIS Pro and IDRISI. M1 Geomatics project, Universite Paris 8.",
+        "longDescription": "This Master 1 Geomatics project at Universite Paris 8 aimed to identify optimal zones for real estate investment and student housing in Saint-Etienne.\n\nThe methodology is based on multi-criteria spatial analysis combining the AHP (Analytic Hierarchy Process) method for criteria weighting and WLC (Weighted Linear Combination) aggregation on 5 criteria: land value, flood risk, proximity to universities, train stations and bars.\n\nTools used include ArcGIS Pro for GIS processing, IDRISI for multi-criteria analysis, and open data from OpenStreetMap. The results mapped the most suitable areas for investment according to different decision-maker profiles."
       },
       "teledetection": {
         "title": "Sentinel-2 Remote Sensing",
-        "description": "Satellite image analysis for vegetation monitoring (NDVI) using SNAP and Python."
+        "description": "Satellite image analysis for vegetation monitoring (NDVI) using SNAP and Python.",
+        "longDescription": "Remote sensing project using Sentinel-2 satellite images for vegetation monitoring via NDVI (Normalized Difference Vegetation Index) calculation.\n\nImage processing was performed using ESA's SNAP (Sentinel Application Platform) software, including atmospheric corrections, resampling and spectral index calculations. Python scripts were developed to automate temporal analysis and generate maps of vegetation cover evolution."
       },
       "cladPrimeco": {
         "title": "Clad-Primeco",
-        "description": "Business website with admin dashboard, content management and e-commerce."
+        "description": "Business website with admin dashboard, content management and e-commerce.",
+        "longDescription": "Full development of a professional website for the Clad-Primeco company, including an administration dashboard, content management and e-commerce features.\n\nTech stack: React 18 with TypeScript, Tailwind CSS for styling, Supabase for backend (authentication, PostgreSQL database, Edge Functions). The site integrates a secure contact system with Resend for emails and hCaptcha for anti-spam protection.\n\nDeployment is handled via Vercel with an automated CI/CD pipeline."
       }
     }
   },
@@ -66,9 +126,17 @@
     "title": "Contact",
     "description": "Let's talk about your project",
     "name": "Name",
+    "namePlaceholder": "Your name",
     "email": "Email",
+    "emailPlaceholder": "your@email.com",
     "message": "Message",
+    "messagePlaceholder": "Describe your project or request...",
     "send": "Send"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
   },
   "footer": {
     "rights": "All rights reserved."

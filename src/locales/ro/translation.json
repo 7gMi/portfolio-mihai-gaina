@@ -1,74 +1,142 @@
 {
   "nav": {
-    "skills": "Competențe",
+    "home": "Acasa",
+    "about": "Despre",
+    "resume": "CV",
+    "portfolio": "Portofoliu",
+    "skills": "Competente",
     "parcours": "Parcurs",
     "projects": "Proiecte",
     "contact": "Contact",
-    "skipToContent": "Salt la conținutul principal"
+    "skipToContent": "Salt la continutul principal"
   },
   "hero": {
-    "greeting": "Bună, sunt",
+    "greeting": "Buna, sunt",
     "name": "Mihai Gaina",
     "title": "Dezvoltator SIG / Geomatician",
-    "subtitle": "De la informatică la instrumentație de teren, de la senzor la hartă — transform datele geospațiale în soluții concrete.",
+    "subtitle": "De la informatica la instrumentatie de teren, de la senzor la harta -- transform datele geospatiale in solutii concrete.",
     "cta": "Vezi proiectele",
-    "cv": "Descarcă CV"
+    "cv": "Descarca CV"
+  },
+  "home": {
+    "featuredTitle": "Proiecte in vedeta",
+    "featuredDescription": "Cateva realizari recente",
+    "viewAllProjects": "Vezi toate proiectele"
+  },
+  "about": {
+    "title": "Despre mine",
+    "bio": "Geomatician si dezvoltator SIG pasionat, combin expertiza in analiza spatiala, teledetectie si dezvoltare web pentru a transforma datele geospatiale in solutii concrete. Titular al unui Master in Geomatica (Universite Paris 8) si cu experienta in instrumentatie de teren la Socotec Monitoring, stapanesc intregul lant de prelucrare a datelor geografice.",
+    "photoPlaceholder": "Foto",
+    "interestsTitle": "Centre de interes",
+    "interestsDescription": "Domenii care ma pasioneza si in care imi dezvolt expertiza",
+    "interests": {
+      "geomatics": "Geomatica",
+      "gis": "Sisteme de Informatii Geografice",
+      "remoteSensing": "Teledetectie",
+      "webDev": "Dezvoltare Web",
+      "instrumentation": "Instrumentatie"
+    }
+  },
+  "resume": {
+    "title": "Curriculum Vitae",
+    "download": "Descarca CV",
+    "keySkills": "Competente cheie",
+    "languagesTitle": "Limbi",
+    "languages": {
+      "french": "Franceza",
+      "frenchLevel": "Fluent (C1)",
+      "english": "Engleza",
+      "englishLevel": "Intermediar (B2)",
+      "romanian": "Romana",
+      "romanianLevel": "Limba materna"
+    }
+  },
+  "portfolio": {
+    "title": "Portofoliu",
+    "description": "Toate proiectele mele",
+    "filterLabel": "Filtreaza dupa categorie",
+    "filterAll": "Toate",
+    "filterGeo": "Geomatica",
+    "filterDev": "Dev Web",
+    "filterBio": "Biomedical",
+    "noResults": "Niciun proiect in aceasta categorie.",
+    "imagePlaceholder": "Imagine in curand"
+  },
+  "projectDetail": {
+    "backToPortfolio": "Inapoi la portofoliu",
+    "sourceCode": "Cod sursa",
+    "liveDemo": "Demo live",
+    "report": "Raport",
+    "previous": "Anterior",
+    "next": "Urmator",
+    "projectNavigation": "Navigare intre proiecte"
   },
   "skills": {
-    "title": "Competențe",
-    "description": "Tehnologii și instrumente pe care le stăpânesc"
+    "title": "Competente",
+    "description": "Tehnologii si instrumente pe care le stapanesc"
   },
   "parcours": {
     "title": "Parcurs",
-    "description": "Parcursul meu profesional și academic",
+    "description": "Parcursul meu profesional si academic",
     "items": {
       "master": {
-        "title": "Master Geomatică",
-        "place": "Université Paris 8",
-        "description": "Analiză spațială, teledetecție, SIG, dezvoltare de aplicații geospațiale."
+        "title": "Master Geomatica",
+        "place": "Universite Paris 8",
+        "description": "Analiza spatiala, teledetectie, SIG, dezvoltare de aplicatii geospatiale."
       },
       "socotec": {
-        "title": "Tehnician Topograf & Instrumentație",
+        "title": "Tehnician Topograf & Instrumentatie",
         "place": "Socotec Monitoring (ex-Cementys)",
-        "description": "Monitorizare structurală, instrumentație senzori, achiziții teren, prelucrare date geodezice."
+        "description": "Monitorizare structurala, instrumentatie senzori, achizitii teren, prelucrare date geodezice."
       },
       "licence": {
-        "title": "Licență Inginerie Biomedicală",
-        "place": "Universitatea Tehnică a Moldovei",
-        "description": "Electronică, senzori, programare, prelucrare semnal aplicată la biomedical."
+        "title": "Licenta Inginerie Biomedicala",
+        "place": "Universitatea Tehnica a Moldovei",
+        "description": "Electronica, senzori, programare, prelucrare semnal aplicata la biomedical."
       },
       "colegiul": {
-        "title": "Informatică",
+        "title": "Informatica",
         "place": "Colegiul Politehnic",
-        "description": "Programare, rețele, baze de date, sisteme de operare."
+        "description": "Programare, retele, baze de date, sisteme de operare."
       }
     }
   },
   "projects": {
     "title": "Proiecte",
-    "description": "Lucrări selectate",
+    "description": "Lucrari selectate",
     "items": {
       "analyseSpatiale": {
-        "title": "Analiză Spațială Multicriterială — Saint-Étienne",
-        "description": "Identificarea zonelor optime pentru investiții imobiliare și locuințe studențești în Saint-Étienne. Ponderare AHP + agregare WLC pe 5 criterii (valoare funciară, risc inundații, proximitate universități/gări/baruri) cu ArcGIS Pro și IDRISI. Proiect M1 Geomatică, Université Paris 8."
+        "title": "Analiza Spatiala Multicriteriala -- Saint-Etienne",
+        "description": "Identificarea zonelor optime pentru investitii imobiliare si locuinte studentesti in Saint-Etienne. Ponderare AHP + agregare WLC pe 5 criterii (valoare funciara, risc inundatii, proximitate universitati/gari/baruri) cu ArcGIS Pro si IDRISI. Proiect M1 Geomatica, Universite Paris 8.",
+        "longDescription": "Acest proiect de Master 1 Geomatica la Universite Paris 8 a vizat identificarea zonelor optime pentru investitii imobiliare si locuinte studentesti in Saint-Etienne.\n\nMetodologia se bazeaza pe analiza spatiala multicriteriala combinand metoda AHP (Analytic Hierarchy Process) pentru ponderarea criteriilor si agregarea WLC (Weighted Linear Combination) pe 5 criterii: valoare funciara, risc de inundatii, proximitate la universitati, gari si baruri.\n\nInstrumentele utilizate includ ArcGIS Pro pentru procesarea SIG, IDRISI pentru analiza multicriteriala si datele deschise de la OpenStreetMap. Rezultatele au permis cartografierea zonelor celor mai propice investitiilor in functie de diferite profiluri de decidenti."
       },
       "teledetection": {
-        "title": "Teledetecție Sentinel-2",
-        "description": "Analiza imaginilor satelitare pentru monitorizarea vegetației (NDVI) cu SNAP și Python."
+        "title": "Teledetectie Sentinel-2",
+        "description": "Analiza imaginilor satelitare pentru monitorizarea vegetatiei (NDVI) cu SNAP si Python.",
+        "longDescription": "Proiect de teledetectie folosind imaginile satelitului Sentinel-2 pentru monitorizarea vegetatiei prin calculul indicelui NDVI (Normalized Difference Vegetation Index).\n\nProcesarea imaginilor a fost realizata cu software-ul SNAP (Sentinel Application Platform) de la ESA, incluzand corectii atmosferice, reeesantionare si calculul indicilor spectrali. Scripturi Python au fost dezvoltate pentru a automatiza analiza temporala si a genera cartografii ale evolutiei acoperirii vegetale."
       },
       "cladPrimeco": {
         "title": "Clad-Primeco",
-        "description": "Site web de afaceri cu panou de administrare, gestionare conținut și e-commerce."
+        "description": "Site web de afaceri cu panou de administrare, gestionare continut si e-commerce.",
+        "longDescription": "Dezvoltarea completa a unui site web profesional pentru compania Clad-Primeco, incluzand un panou de administrare, gestionarea continutului si functionalitati e-commerce.\n\nStack tehnic: React 18 cu TypeScript, Tailwind CSS pentru styling, Supabase pentru backend (autentificare, baza de date PostgreSQL, Edge Functions). Site-ul integreaza un sistem de contact securizat cu Resend pentru emailuri si hCaptcha pentru protectia anti-spam.\n\nDeploymentul este asigurat prin Vercel cu un pipeline CI/CD automatizat."
       }
     }
   },
   "contact": {
     "title": "Contact",
-    "description": "Să discutăm despre proiectul tău",
+    "description": "Sa discutam despre proiectul tau",
     "name": "Nume",
+    "namePlaceholder": "Numele tau",
     "email": "Email",
+    "emailPlaceholder": "email@exemplu.com",
     "message": "Mesaj",
+    "messagePlaceholder": "Descrie proiectul sau cererea ta...",
     "send": "Trimite"
+  },
+  "notFound": {
+    "title": "Pagina negasita",
+    "message": "Pagina pe care o cautati nu exista sau a fost mutata.",
+    "backHome": "Inapoi acasa"
   },
   "footer": {
     "rights": "Toate drepturile rezervate."

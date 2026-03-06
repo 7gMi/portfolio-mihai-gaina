@@ -2,6 +2,7 @@ export interface Project {
   id: string;
   titleKey: string;
   descriptionKey: string;
+  longDescriptionKey?: string;
   category: 'geomatique' | 'dev-web' | 'biomedical';
   tags: string[];
   image?: string;
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     id: 'analyse-spatiale',
     titleKey: 'projects.items.analyseSpatiale.title',
     descriptionKey: 'projects.items.analyseSpatiale.description',
+    longDescriptionKey: 'projects.items.analyseSpatiale.longDescription',
     category: 'geomatique',
     tags: ['ArcGIS Pro', 'IDRISI', 'AHP', 'WLC', 'IDW', 'OpenStreetMap'],
     image: '/images/projets/geomatique/analyse-spatiale.png',
@@ -28,6 +30,7 @@ export const projects: Project[] = [
     id: 'teledetection',
     titleKey: 'projects.items.teledetection.title',
     descriptionKey: 'projects.items.teledetection.description',
+    longDescriptionKey: 'projects.items.teledetection.longDescription',
     category: 'geomatique',
     tags: ['SNAP', 'Sentinel-2', 'NDVI'],
     image: '/images/projets/geomatique/teledetection.jpg',
@@ -36,6 +39,7 @@ export const projects: Project[] = [
     id: 'clad-primeco',
     titleKey: 'projects.items.cladPrimeco.title',
     descriptionKey: 'projects.items.cladPrimeco.description',
+    longDescriptionKey: 'projects.items.cladPrimeco.longDescription',
     category: 'dev-web',
     tags: ['React', 'TypeScript', 'Tailwind', 'Supabase'],
     image: '/images/projets/dev-web/clad-primeco.jpg',
