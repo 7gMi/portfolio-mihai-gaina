@@ -33,7 +33,7 @@ export function HomePage() {
                     {project.image ? (
                       <img
                         src={project.image}
-                        alt=""
+                        alt={t(project.titleKey)}
                         className="h-full w-full object-cover"
                         loading="lazy"
                       />

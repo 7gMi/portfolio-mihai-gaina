@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -29,19 +29,48 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const drawerRef = useRef<HTMLDivElement>(null);
+
   // Close mobile menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
+  // Focus trap + Escape key for mobile drawer
+  const handleDrawerKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setMenuOpen(false);
+      return;
+    }
+    if (e.key !== 'Tab' || !drawerRef.current) return;
+    const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }, []);
+
   useEffect(() => {
     if (!menuOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMenuOpen(false);
+    document.addEventListener('keydown', handleDrawerKeyDown);
+    // Focus first focusable element when drawer opens
+    const timer = setTimeout(() => {
+      const first = drawerRef.current?.querySelector<HTMLElement>('a[href], button');
+      first?.focus();
+    }, 300); // wait for slide animation
+    return () => {
+      document.removeEventListener('keydown', handleDrawerKeyDown);
+      clearTimeout(timer);
     };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [menuOpen]);
+  }, [menuOpen, handleDrawerKeyDown]);
 
   return (
     <>
@@ -129,6 +158,10 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('nav.menu', 'Navigation menu')}
         className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col bg-bg-card p-6 pt-20 shadow-xl transition-transform duration-300 md:hidden ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}

@@ -14,7 +14,7 @@ export function Parcours() {
           {parcours.map((item, i) => (
             <div key={i} className="relative mb-10 last:mb-0">
               {/* Dot */}
-              <div className="absolute -left-[calc(2rem+5px)] flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary/30 bg-bg-card text-primary">
+              <div className="absolute -left-[41px] flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary/30 bg-bg-card text-primary">
                 {item.type === 'work' ? <Briefcase size={18} /> : <GraduationCap size={18} />}
               </div>
               <span className="text-xs font-semibold text-primary">{item.period}</span>

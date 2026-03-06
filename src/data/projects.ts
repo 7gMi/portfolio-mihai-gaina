@@ -46,6 +46,8 @@ export const projects: Project[] = [
     category: 'geomatique',
     tags: ['SNAP', 'Sentinel-2', 'NDVI'],
     image: '/images/projets/geomatique/teledetection.jpg',
+    date: '2025',
+    featured: true,
   },
   {
     id: 'clad-primeco',

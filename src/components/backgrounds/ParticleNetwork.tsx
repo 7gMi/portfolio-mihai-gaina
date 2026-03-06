@@ -17,9 +17,6 @@ async function loadDots(): Promise<[number, number][]> {
   const dots: [number, number][] = [];
   const step = 2.5; // degrees between dots
 
-  // Simple point-in-polygon test using d3 projection clip
-  const testProj = geoOrthographic().clipAngle(180);
-
   for (let lat = -60; lat <= 75; lat += step) {
     for (let lon = -180; lon < 180; lon += step) {
       // Quick test: project and check if the point is on land
@@ -78,9 +75,9 @@ export function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = canvasRef.current!;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d')!;
     if (!ctx) return;
 
     let animId: number;
