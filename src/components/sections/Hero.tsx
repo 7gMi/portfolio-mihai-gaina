@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Github, Linkedin, Instagram } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { ParticleNetwork } from '../backgrounds/ParticleNetwork';
 
 export function Hero() {
   const { t, i18n } = useTranslation();
@@ -19,8 +20,11 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-4"
     >
-      {/* Gradient background */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-primary)/8%,transparent_70%)]" />
+      {/* Animated globe background */}
+      <ParticleNetwork />
+
+      {/* Gradient overlay for text readability */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-bg-base)/40%,var(--color-bg-base)/80%_70%)]" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.p
@@ -107,15 +111,6 @@ export function Hero() {
             aria-label="GitHub"
           >
             <Github size={22} />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-muted transition-colors duration-150 hover:text-primary"
-            aria-label="Instagram"
-          >
-            <Instagram size={22} />
           </a>
         </motion.div>
       </div>

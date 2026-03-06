@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo MG - Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; padding: 2rem; }
+    h1 { text-align: center; font-family: 'Space Grotesk', sans-serif; margin-bottom: 2rem; font-size: 1.5rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #111827;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .card h3 { font-size: 1rem; margin-bottom: 1rem; color: #94a3b8; }
+    .logo-large { width: 200px; height: 200px; margin: 0 auto 1.5rem; }
+    .logo-medium { width: 80px; height: 80px; margin: 0 auto 1rem; }
+    .logo-small { width: 40px; height: 40px; margin: 0 auto 1rem; }
+    .sizes { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 1rem; }
+    .navbar-demo {
+      background: #0F172A;
+      border-radius: 12px;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .navbar-demo .links { display: flex; gap: 1.5rem; font-size: 0.8rem; color: #94a3b8; }
+    .navbar-demo .links span:first-child { color: #38BDF8; }
+    .navbar-demo img { width: 36px; height: 36px; }
+    .on-white {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .label { font-size: 0.7rem; color: #64748B; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<h1>Logo MG - Globe avec Continents</h1>
+
+<div class="grid">
+  <!-- Taille principale -->
+  <div class="card">
+    <h3>Taille principale (200px)</h3>
+    <div style="width: 200px; margin: 0 auto 1.5rem;">
+      <img src="logo-v5-globe-continents.svg" width="200" alt="Logo MG Globe" style="width:100%;height:auto;">
+    </div>
+  </div>
+
+  <!-- Differentes tailles -->
+  <div class="card">
+    <h3>Tailles responsive</h3>
+    <div class="sizes">
+      <div>
+        <img src="logo-v5-globe-continents.svg" width="120" height="120" alt="Logo 120px">
+        <p class="label">120px</p>
+      </div>
+      <div>
+        <img src="logo-v5-globe-continents.svg" width="80" height="80" alt="Logo 80px">
+        <p class="label">80px</p>
+      </div>
+      <div>
+        <img src="logo-v5-globe-continents.svg" width="48" height="48" alt="Logo 48px">
+        <p class="label">48px</p>
+      </div>
+      <div>
+        <img src="logo-v5-globe-continents.svg" width="32" height="32" alt="Logo 32px">
+        <p class="label">32px (favicon)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dans navbar -->
+  <div class="card" style="grid-column: 1 / -1;">
+    <h3>Integration navbar</h3>
+    <div class="navbar-demo">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="logo-v5-globe-continents.svg" width="36" height="36" alt="Logo">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; color: white;">Mihai Gaina</span>
+      </div>
+      <div class="links">
+        <span>Competences</span>
+        <span>Parcours</span>
+        <span>Projets</span>
+        <span>Contact</span>
+        <span style="color: #475569;">FR | EN | RO</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sur fond blanc (pour CV imprime) -->
+  <div class="card" style="grid-column: 1 / -1;">
+    <h3>Sur fond blanc (CV imprime)</h3>
+    <div class="on-white">
+      <img src="logo-v5-globe-continents.svg" width="80" height="80" alt="Logo sur blanc">
+      <img src="logo-v5-globe-continents.svg" width="48" height="48" alt="Logo petit sur blanc">
+      <img src="logo-v5-globe-continents.svg" width="32" height="32" alt="Logo favicon sur blanc">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

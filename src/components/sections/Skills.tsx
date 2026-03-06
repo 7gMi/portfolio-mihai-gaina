@@ -3,17 +3,8 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
 import { skillCategories } from '../../data/skills';
 
-const categoryLabels: Record<string, Record<string, string>> = {
-  sig: { fr: 'SIG & Géomatique', en: 'GIS & Geomatics', ro: 'SIG & Geomatică' },
-  dev: { fr: 'Développement', en: 'Development', ro: 'Dezvoltare' },
-  teledetection: { fr: 'Télédétection', en: 'Remote Sensing', ro: 'Teledetecție' },
-  instrumentation: { fr: 'Instrumentation', en: 'Instrumentation', ro: 'Instrumentație' },
-  outils: { fr: 'Outils', en: 'Tools', ro: 'Instrumente' },
-};
-
 export function Skills() {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language;
+  const { t } = useTranslation();
 
   return (
     <section id="skills" className="py-20 px-4">
@@ -26,7 +17,7 @@ export function Skills() {
               className="rounded-xl border border-border-default bg-bg-card p-6 shadow-card hover:shadow-card-hover hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-150"
             >
               <h3 className="mb-4 text-lg font-semibold text-text-primary">
-                {categoryLabels[cat.key]?.[lang] ?? cat.key}
+                {t(`skills.categories.${cat.key}`)}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (

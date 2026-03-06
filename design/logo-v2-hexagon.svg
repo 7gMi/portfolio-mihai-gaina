@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- V2: Hexagone (forme tech/data) avec MG -->
+  <polygon points="100,8 183,54 183,146 100,192 17,146 17,54" fill="#1E293B" stroke="#2563EB" stroke-width="3"/>
+
+  <!-- Inner hexagon border -->
+  <polygon points="100,24 170,62 170,138 100,176 30,138 30,62" fill="none" stroke="#2563EB" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- M letter -->
+  <text x="46" y="122" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="68" fill="white">M</text>
+
+  <!-- G letter in accent color -->
+  <text x="108" y="122" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="68" fill="#2563EB">G</text>
+
+  <!-- Coordinate crosshair -->
+  <line x1="88" y1="140" x2="120" y2="140" stroke="#2563EB" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="104" cy="140" r="3" stroke="#2563EB" stroke-width="1" fill="none" opacity="0.5"/>
+</svg>

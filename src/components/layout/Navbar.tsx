@@ -67,9 +67,18 @@ export function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="text-xl font-bold text-primary transition-colors duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
+            className="flex items-center gap-2.5 transition-opacity duration-150 hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
           >
-            MG
+            <img
+              src="/images/logo/logo-globe.svg"
+              alt="MG"
+              width="48"
+              height="58"
+              className="h-12 w-auto"
+            />
+            <span className="text-lg font-bold text-text-primary">
+              Mihai <span className="text-primary">Gaina</span>
+            </span>
           </Link>
 
           {/* Desktop links */}

@@ -48,7 +48,9 @@
       "english": "English",
       "englishLevel": "Intermediate (B2)",
       "romanian": "Romanian",
-      "romanianLevel": "Native language"
+      "romanianLevel": "Native language",
+      "russian": "Russian",
+      "russianLevel": "Fluent"
     }
   },
   "portfolio": {
@@ -73,7 +75,14 @@
   },
   "skills": {
     "title": "Skills",
-    "description": "Technologies and tools I work with"
+    "description": "Technologies and tools I work with",
+    "categories": {
+      "sig": "GIS & Geomatics",
+      "dev": "Development",
+      "teledetection": "Remote Sensing",
+      "instrumentation": "Instrumentation",
+      "outils": "Tools"
+    }
   },
   "parcours": {
     "title": "Background",

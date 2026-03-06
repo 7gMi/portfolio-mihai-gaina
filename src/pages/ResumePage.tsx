@@ -15,6 +15,7 @@ const languages = [
   { key: 'resume.languages.french', level: 'resume.languages.frenchLevel' },
   { key: 'resume.languages.english', level: 'resume.languages.englishLevel' },
   { key: 'resume.languages.romanian', level: 'resume.languages.romanianLevel' },
+  { key: 'resume.languages.russian', level: 'resume.languages.russianLevel' },
 ];
 
 export function ResumePage() {
@@ -70,7 +71,7 @@ export function ResumePage() {
       <section className="bg-bg-surface py-16 px-4">
         <div className="mx-auto max-w-3xl">
           <SectionHeading title={t('resume.languagesTitle')} />
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {languages.map(({ key, level }) => (
               <motion.div
                 key={key}

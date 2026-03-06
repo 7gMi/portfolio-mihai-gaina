@@ -48,7 +48,9 @@
       "english": "Engleză",
       "englishLevel": "Intermediar (B2)",
       "romanian": "Română",
-      "romanianLevel": "Limbă maternă"
+      "romanianLevel": "Limbă maternă",
+      "russian": "Rusă",
+      "russianLevel": "Curent"
     }
   },
   "portfolio": {
@@ -73,7 +75,14 @@
   },
   "skills": {
     "title": "Competențe",
-    "description": "Tehnologii și instrumente pe care le stăpânesc"
+    "description": "Tehnologii și instrumente pe care le stăpânesc",
+    "categories": {
+      "sig": "SIG & Geomatică",
+      "dev": "Dezvoltare",
+      "teledetection": "Teledetecție",
+      "instrumentation": "Instrumentație",
+      "outils": "Instrumente"
+    }
   },
   "parcours": {
     "title": "Parcurs",

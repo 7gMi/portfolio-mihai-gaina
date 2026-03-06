@@ -48,7 +48,9 @@
       "english": "Anglais",
       "englishLevel": "Intermédiaire (B2)",
       "romanian": "Roumain",
-      "romanianLevel": "Langue maternelle"
+      "romanianLevel": "Langue maternelle",
+      "russian": "Russe",
+      "russianLevel": "Courant"
     }
   },
   "portfolio": {
@@ -73,7 +75,14 @@
   },
   "skills": {
     "title": "Compétences",
-    "description": "Technologies et outils que je maîtrise"
+    "description": "Technologies et outils que je maîtrise",
+    "categories": {
+      "sig": "SIG & Géomatique",
+      "dev": "Développement",
+      "teledetection": "Télédétection",
+      "instrumentation": "Instrumentation",
+      "outils": "Outils"
+    }
   },
   "parcours": {
     "title": "Parcours",

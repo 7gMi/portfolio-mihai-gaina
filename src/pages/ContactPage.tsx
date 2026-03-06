@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { SectionHeading } from '../components/ui/SectionHeading';
-import { Button } from '../components/ui/Button';
+import { Mail, MapPin, Linkedin, Github, Send, CheckCircle, AlertCircle, Clock, Globe } from 'lucide-react';
+import { ContactGlobe } from '../components/backgrounds/ContactGlobe';
 import { supabase } from '../lib/supabase';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
@@ -14,6 +13,7 @@ export function ContactPage() {
   const [status, setStatus] = useState<FormStatus>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (status === 'success' || status === 'error') setStatus('idle');
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -36,53 +36,96 @@ export function ContactPage() {
 
   return (
     <div className="pt-24">
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-xl">
-          <SectionHeading
-            title={t('contact.title')}
-            description={t('contact.description')}
-          />
+      {/* Two-column layout: animation LEFT, content RIGHT */}
+      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-stretch px-4 py-8" style={{ minHeight: '75vh' }}>
 
-          {/* Email CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-10 flex flex-col items-center gap-6"
-          >
-            <Button href="mailto:gaina.mihai.pro@gmail.com">
-              <Mail size={18} />
-              gaina.mihai.pro@gmail.com
-            </Button>
+        {/* LEFT — Animation */}
+        <div className="relative flex-1 overflow-hidden rounded-l-2xl lg:min-h-0" style={{ minHeight: '400px' }}>
+          <ContactGlobe />
+        </div>
 
-            <div className="flex gap-6">
+        {/* RIGHT — Description + Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex w-full flex-col justify-center gap-8 rounded-r-2xl border border-border-default bg-bg-card/60 p-8 pl-10 backdrop-blur-sm lg:w-[480px] lg:shrink-0"
+        >
+          {/* Description */}
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-3xl font-bold text-text-primary">{t('contact.title')}</h2>
+              <p className="mt-3 text-sm text-text-secondary leading-relaxed">
+                {t('contact.description')}
+              </p>
+            </div>
+
+            {/* Info items */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <MapPin size={18} />
+                </div>
+                <p className="text-sm font-medium text-text-primary">Paris, France</p>
+              </div>
+
+              <a
+                href="mailto:gaina.mihai.pro@gmail.com"
+                className="flex items-center gap-3 transition-colors hover:opacity-80"
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Mail size={18} />
+                </div>
+                <p className="text-sm text-primary">gaina.mihai.pro@gmail.com</p>
+              </a>
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Clock size={18} />
+                </div>
+                <p className="text-sm text-text-muted">Freelance & CDI</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Globe size={18} />
+                </div>
+                <p className="text-sm text-text-muted">FR, EN, RO, RU</p>
+              </div>
+            </div>
+
+            {/* Social */}
+            <div className="flex gap-3">
               <a
                 href="https://www.linkedin.com/in/mihai-gaina-032812188/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted transition-colors hover:text-primary"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border-default bg-bg-card/30 text-text-muted transition-colors hover:text-primary hover:border-primary/40"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={28} />
+                <Linkedin size={16} />
               </a>
               <a
                 href="https://github.com/7gMi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted transition-colors hover:text-primary"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border-default bg-bg-card/30 text-text-muted transition-colors hover:text-primary hover:border-primary/40"
                 aria-label="GitHub"
               >
-                <Github size={28} />
+                <Github size={16} />
               </a>
             </div>
-          </motion.div>
+          </div>
+
+          {/* Separator */}
+          <div className="h-px bg-border-default" />
 
           {/* Status messages */}
           {status === 'success' && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-700"
+              className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-3 text-sm text-green-700"
             >
               <CheckCircle size={18} />
               {t('contact.success')}
@@ -93,7 +136,7 @@ export function ContactPage() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+              className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700"
             >
               <AlertCircle size={18} />
               {t('contact.error')}
@@ -101,18 +144,9 @@ export function ContactPage() {
           )}
 
           {/* Contact form */}
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="space-y-5 rounded-xl border border-border-default bg-bg-card p-6 shadow-card"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label
-                htmlFor="contact-name"
-                className="mb-1.5 block text-sm font-medium text-text-primary"
-              >
+              <label htmlFor="contact-name" className="mb-1.5 block text-xs font-medium text-text-secondary">
                 {t('contact.name')}
               </label>
               <input
@@ -123,15 +157,12 @@ export function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 disabled={status === 'sending'}
-                className="w-full rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
+                className="w-full rounded-lg border border-border-default bg-bg-base/50 px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
                 placeholder={t('contact.namePlaceholder')}
               />
             </div>
             <div>
-              <label
-                htmlFor="contact-email"
-                className="mb-1.5 block text-sm font-medium text-text-primary"
-              >
+              <label htmlFor="contact-email" className="mb-1.5 block text-xs font-medium text-text-secondary">
                 {t('contact.email')}
               </label>
               <input
@@ -142,26 +173,23 @@ export function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 disabled={status === 'sending'}
-                className="w-full rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
+                className="w-full rounded-lg border border-border-default bg-bg-base/50 px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
                 placeholder={t('contact.emailPlaceholder')}
               />
             </div>
             <div>
-              <label
-                htmlFor="contact-message"
-                className="mb-1.5 block text-sm font-medium text-text-primary"
-              >
+              <label htmlFor="contact-message" className="mb-1.5 block text-xs font-medium text-text-secondary">
                 {t('contact.message')}
               </label>
               <textarea
                 id="contact-message"
                 name="message"
                 required
-                rows={5}
+                rows={4}
                 value={formData.message}
                 onChange={handleChange}
                 disabled={status === 'sending'}
-                className="w-full resize-none rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
+                className="w-full resize-none rounded-lg border border-border-default bg-bg-base/50 px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
                 placeholder={t('contact.messagePlaceholder')}
               />
             </div>
@@ -173,9 +201,9 @@ export function ContactPage() {
               {status === 'sending' ? t('contact.sending') : t('contact.send')}
               <Send size={16} />
             </button>
-          </motion.form>
-        </div>
-      </section>
+          </form>
+        </motion.div>
+      </div>
     </div>
   );
 }
