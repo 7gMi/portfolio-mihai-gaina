@@ -101,9 +101,9 @@ export function Navbar() {
             <img
               src="/images/logo/logo-globe.svg"
               alt="MG"
-              width="48"
-              height="58"
-              className="h-12 w-auto"
+              width="67"
+              height="81"
+              className="h-[67px] w-auto"
             />
             <span className="text-lg font-bold text-text-primary">
               Mihai <span className="text-primary">Gaina</span>

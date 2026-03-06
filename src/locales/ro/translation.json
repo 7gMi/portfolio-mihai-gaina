@@ -155,6 +155,17 @@
     "message": "Pagina pe care o cauți nu există sau a fost mutată.",
     "backHome": "Înapoi acasă"
   },
+  "cities": {
+    "paris": "Paris",
+    "newYork": "New York",
+    "rio": "Rio de Janeiro",
+    "tokyo": "Tokyo",
+    "chisinau": "Chișinău",
+    "bucharest": "București",
+    "dublin": "Dublin",
+    "berlin": "Berlin",
+    "dubai": "Dubai"
+  },
   "footer": {
     "rights": "Toate drepturile rezervate."
   }

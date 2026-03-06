@@ -41,7 +41,19 @@ export function ContactPage() {
 
         {/* LEFT — Animation */}
         <div className="relative flex-1 overflow-hidden rounded-l-2xl lg:min-h-0" style={{ minHeight: '400px' }}>
-          <ContactGlobe />
+          <ContactGlobe
+            parisLabel={t('cities.paris')}
+            cityNames={{
+              newYork: t('cities.newYork'),
+              rio: t('cities.rio'),
+              tokyo: t('cities.tokyo'),
+              chisinau: t('cities.chisinau'),
+              bucharest: t('cities.bucharest'),
+              dublin: t('cities.dublin'),
+              berlin: t('cities.berlin'),
+              dubai: t('cities.dubai'),
+            }}
+          />
         </div>
 
         {/* RIGHT — Description + Form */}

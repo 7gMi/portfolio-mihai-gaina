@@ -53,15 +53,21 @@ function pip(point: [number, number], ring: number[][]): boolean {
 
 // Origins: messages come from around the world toward Paris
 const PARIS = [2.35, 48.86] as [number, number];
-const ORIGINS: { pos: [number, number]; name: string }[] = [
-  { pos: [-74, 40.7], name: 'New York' },
-  { pos: [-43.2, -22.9], name: 'Rio' },
-  { pos: [139.7, 35.7], name: 'Tokyo' },
-  { pos: [28.83, 47.01], name: 'Chișinău' },
-  { pos: [26.1, 44.43], name: 'București' },
-  { pos: [-6.26, 53.35], name: 'Dublin' },
-  { pos: [13.4, 52.52], name: 'Berlin' },
-  { pos: [55.3, 25.3], name: 'Dubai' },
+
+interface CityDef {
+  pos: [number, number];
+  key: string;
+}
+
+const ORIGINS: CityDef[] = [
+  { pos: [-74, 40.7], key: 'newYork' },
+  { pos: [-43.2, -22.9], key: 'rio' },
+  { pos: [139.7, 35.7], key: 'tokyo' },
+  { pos: [28.83, 47.01], key: 'chisinau' },
+  { pos: [26.1, 44.43], key: 'bucharest' },
+  { pos: [-6.26, 53.35], key: 'dublin' },
+  { pos: [13.4, 52.52], key: 'berlin' },
+  { pos: [55.3, 25.3], key: 'dubai' },
 ];
 
 interface Line {
@@ -71,7 +77,17 @@ interface Line {
   delay: number;
 }
 
-export function ContactGlobe() {
+interface ContactGlobeProps {
+  cityNames?: Record<string, string>;
+  parisLabel?: string;
+}
+
+const DEFAULT_CITY_NAMES: Record<string, string> = {
+  newYork: 'New York', rio: 'Rio', tokyo: 'Tokyo', chisinau: 'Chișinău',
+  bucharest: 'București', dublin: 'Dublin', berlin: 'Berlin', dubai: 'Dubai',
+};
+
+export function ContactGlobe({ cityNames = DEFAULT_CITY_NAMES, parisLabel = 'Paris' }: ContactGlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -161,7 +177,7 @@ export function ContactGlobe() {
           // Paris label
           ctx.font = 'bold 12px Inter, system-ui, sans-serif';
           ctx.fillStyle = 'rgba(56, 189, 248, 0.85)';
-          ctx.fillText('Paris', pParis[0] + 10, pParis[1] - 10);
+          ctx.fillText(parisLabel, pParis[0] + 10, pParis[1] - 10);
         }
 
         // Animated connection lines from origins to Paris (Hero-style arcs)
@@ -248,7 +264,7 @@ export function ContactGlobe() {
             // City label
             ctx.font = 'bold 10px Inter, system-ui, sans-serif';
             ctx.fillStyle = 'rgba(45, 212, 191, 0.8)';
-            ctx.fillText(ORIGINS[li].name, pFrom[0] + 8, pFrom[1] - 7);
+            ctx.fillText(cityNames[ORIGINS[li].key] || ORIGINS[li].key, pFrom[0] + 8, pFrom[1] - 7);
           }
         }
 
@@ -261,7 +277,7 @@ export function ContactGlobe() {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [cityNames, parisLabel]);
 
   return (
     <canvas
