@@ -12,8 +12,12 @@ const PortfolioPage = lazy(() => import('./pages/PortfolioPage').then(m => ({ de
 const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage').then(m => ({ default: m.ProjectDetailPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
-const BackgroundPreview = lazy(() => import('./pages/BackgroundPreview').then(m => ({ default: m.BackgroundPreview })));
-const ContactBgPreview = lazy(() => import('./pages/ContactBgPreview').then(m => ({ default: m.ContactBgPreview })));
+const BackgroundPreview = import.meta.env.DEV
+  ? lazy(() => import('./pages/BackgroundPreview').then(m => ({ default: m.BackgroundPreview })))
+  : null;
+const ContactBgPreview = import.meta.env.DEV
+  ? lazy(() => import('./pages/ContactBgPreview').then(m => ({ default: m.ContactBgPreview })))
+  : null;
 
 function PageLoader() {
   return (
@@ -39,7 +43,7 @@ export default function App() {
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              {import.meta.env.DEV && (
+              {import.meta.env.DEV && BackgroundPreview && ContactBgPreview && (
                 <>
                   <Route path="/bg-preview" element={<BackgroundPreview />} />
                   <Route path="/contact-bg-preview" element={<ContactBgPreview />} />

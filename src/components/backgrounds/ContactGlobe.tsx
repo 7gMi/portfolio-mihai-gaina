@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { geoOrthographic } from 'd3-geo';
 import { feature } from 'topojson-client';
 import type { Topology } from 'topojson-specification';
+import { useCanvasVisibility } from '../../hooks/useCanvasVisibility';
 
 let cachedDots: [number, number][] | null = null;
 
@@ -89,6 +90,13 @@ const DEFAULT_CITY_NAMES: Record<string, string> = {
 
 export function ContactGlobe({ cityNames = DEFAULT_CITY_NAMES, parisLabel = 'Paris' }: ContactGlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisible = useCanvasVisibility(canvasRef);
+  const visibleRef = useRef(isVisible);
+  const drawRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    visibleRef.current = isVisible;
+  }, [isVisible]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -121,6 +129,7 @@ export function ContactGlobe({ cityNames = DEFAULT_CITY_NAMES, parisLabel = 'Par
 
     loadDots().then((worldDots) => {
       function draw() {
+        if (!visibleRef.current) return;
         const w = canvas.offsetWidth;
         const h = canvas.offsetHeight;
         const radius = Math.min(w, h) * 0.42;
@@ -271,14 +280,23 @@ export function ContactGlobe({ cityNames = DEFAULT_CITY_NAMES, parisLabel = 'Par
 
         if (!prefersReduced) animId = requestAnimationFrame(draw);
       }
+      drawRef.current = draw;
       draw();
     });
 
     return () => {
+      drawRef.current = null;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
   }, [cityNames, parisLabel]);
+
+  // Restart animation loop when canvas becomes visible again
+  useEffect(() => {
+    if (isVisible && drawRef.current) {
+      drawRef.current();
+    }
+  }, [isVisible]);
 
   return (
     <canvas

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { geoOrthographic } from 'd3-geo';
 import { feature } from 'topojson-client';
 import type { Topology } from 'topojson-specification';
+import { useCanvasVisibility } from '../../hooks/useCanvasVisibility';
 
 // Pre-sampled world dot positions (lat/lon) — generated from coastlines
 // We'll generate dots on-the-fly from real data
@@ -73,6 +74,13 @@ interface Particle {
 
 export function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisible = useCanvasVisibility(canvasRef);
+  const visibleRef = useRef(isVisible);
+  const drawRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    visibleRef.current = isVisible;
+  }, [isVisible]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -111,6 +119,7 @@ export function ParticleNetwork() {
 
     loadDots().then((worldDots) => {
       function draw() {
+        if (!visibleRef.current) return;
         const w = canvas.offsetWidth;
         const h = canvas.offsetHeight;
         const radius = Math.min(w, h) * 0.46;
@@ -302,14 +311,23 @@ export function ParticleNetwork() {
         if (!prefersReduced) animId = requestAnimationFrame(draw);
       }
 
+      drawRef.current = draw;
       draw();
     });
 
     return () => {
+      drawRef.current = null;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
   }, []);
+
+  // Restart animation loop when canvas becomes visible again
+  useEffect(() => {
+    if (isVisible && drawRef.current) {
+      drawRef.current();
+    }
+  }, [isVisible]);
 
   return (
     <canvas

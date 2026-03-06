@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { geoOrthographic, geoPath, geoGraticule10 } from 'd3-geo';
 import { feature } from 'topojson-client';
 import type { Topology } from 'topojson-specification';
+import { useCanvasVisibility } from '../../hooks/useCanvasVisibility';
 
 let worldData: ReturnType<typeof feature> | null = null;
 
@@ -15,6 +16,13 @@ async function loadWorld() {
 
 export function RotatingGlobe() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisible = useCanvasVisibility(canvasRef);
+  const visibleRef = useRef(isVisible);
+  const drawRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    visibleRef.current = isVisible;
+  }, [isVisible]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -46,6 +54,7 @@ export function RotatingGlobe() {
 
     loadWorld().then((countries) => {
       function draw() {
+        if (!visibleRef.current) return;
         const w = canvas.offsetWidth;
         const h = canvas.offsetHeight;
         const radius = Math.min(w, h) * 0.38;
@@ -135,14 +144,23 @@ export function RotatingGlobe() {
         animId = requestAnimationFrame(draw);
       }
 
+      drawRef.current = draw;
       draw();
     });
 
     return () => {
+      drawRef.current = null;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
   }, []);
+
+  // Restart animation loop when canvas becomes visible again
+  useEffect(() => {
+    if (isVisible && drawRef.current) {
+      drawRef.current();
+    }
+  }, [isVisible]);
 
   return (
     <canvas

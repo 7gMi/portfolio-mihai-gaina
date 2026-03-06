@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useCanvasVisibility } from '../../hooks/useCanvasVisibility';
 
 const PARIS = { x: 0.51, y: 0.35 }; // Normalized position on a flat map
 
@@ -26,6 +27,13 @@ interface Ripple {
 
 export function PulseRadar() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisible = useCanvasVisibility(canvasRef);
+  const visibleRef = useRef(isVisible);
+  const drawRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    visibleRef.current = isVisible;
+  }, [isVisible]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -50,6 +58,7 @@ export function PulseRadar() {
     let lastRipple = 0;
 
     function draw() {
+      if (!visibleRef.current) return;
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
       const now = Date.now();
@@ -174,13 +183,22 @@ export function PulseRadar() {
       animId = requestAnimationFrame(draw);
     }
 
+    drawRef.current = draw;
     draw();
 
     return () => {
+      drawRef.current = null;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
   }, []);
+
+  // Restart animation loop when canvas becomes visible again
+  useEffect(() => {
+    if (isVisible && drawRef.current) {
+      drawRef.current();
+    }
+  }, [isVisible]);
 
   return (
     <canvas

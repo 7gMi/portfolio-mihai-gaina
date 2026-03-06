@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useCanvasVisibility } from '../../hooks/useCanvasVisibility';
 
 // Simplified world map points for flat 2D projection (Mercator-like)
 // Format: normalized [x, y] on canvas
@@ -49,6 +50,13 @@ interface Photon {
 
 export function SubmarineCables() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisible = useCanvasVisibility(canvasRef);
+  const visibleRef = useRef(isVisible);
+  const drawRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    visibleRef.current = isVisible;
+  }, [isVisible]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -77,6 +85,7 @@ export function SubmarineCables() {
     }
 
     function draw() {
+      if (!visibleRef.current) return;
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
       const elapsed = Date.now() - startTime;
@@ -214,13 +223,22 @@ export function SubmarineCables() {
       animId = requestAnimationFrame(draw);
     }
 
+    drawRef.current = draw;
     draw();
 
     return () => {
+      drawRef.current = null;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
   }, []);
+
+  // Restart animation loop when canvas becomes visible again
+  useEffect(() => {
+    if (isVisible && drawRef.current) {
+      drawRef.current();
+    }
+  }, [isVisible]);
 
   return (
     <canvas

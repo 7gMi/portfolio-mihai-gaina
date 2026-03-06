@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useCanvasVisibility } from '../../hooks/useCanvasVisibility';
 
 const COORDS = [
   '48.8566°N  2.3522°E   PARIS',
@@ -18,6 +19,13 @@ const GRID_LABELS_LON = [-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150];
 
 export function GpsTerminal() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isVisible = useCanvasVisibility(canvasRef);
+  const visibleRef = useRef(isVisible);
+  const drawRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    visibleRef.current = isVisible;
+  }, [isVisible]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -38,6 +46,7 @@ export function GpsTerminal() {
     window.addEventListener('resize', resize);
 
     function draw() {
+      if (!visibleRef.current) return;
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
       const elapsed = Date.now() - startTime;
@@ -178,13 +187,22 @@ export function GpsTerminal() {
       animId = requestAnimationFrame(draw);
     }
 
+    drawRef.current = draw;
     draw();
 
     return () => {
+      drawRef.current = null;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
   }, []);
+
+  // Restart animation loop when canvas becomes visible again
+  useEffect(() => {
+    if (isVisible && drawRef.current) {
+      drawRef.current();
+    }
+  }, [isVisible]);
 
   return (
     <canvas
