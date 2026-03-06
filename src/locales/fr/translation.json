@@ -1,10 +1,10 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "A propos",
+    "about": "À propos",
     "resume": "CV",
     "portfolio": "Portfolio",
-    "skills": "Competences",
+    "skills": "Compétences",
     "parcours": "Parcours",
     "projects": "Projets",
     "contact": "Contact",
@@ -13,112 +13,112 @@
   "hero": {
     "greeting": "Bonjour, je suis",
     "name": "Mihai Gaina",
-    "title": "Developpeur SIG / Geomaticien",
-    "subtitle": "De l'informatique a l'instrumentation terrain, du capteur a la carte -- je transforme les donnees geospatiales en solutions concretes.",
+    "title": "Développeur SIG / Géomaticien",
+    "subtitle": "De l'informatique à l'instrumentation terrain, du capteur à la carte — je transforme les données géospatiales en solutions concrètes.",
     "cta": "Voir mes projets",
-    "cv": "Telecharger CV"
+    "cv": "Télécharger CV"
   },
   "home": {
     "featuredTitle": "Projets en vedette",
-    "featuredDescription": "Quelques realisations recentes",
+    "featuredDescription": "Quelques réalisations récentes",
     "viewAllProjects": "Voir tous les projets"
   },
   "about": {
-    "title": "A propos",
-    "bio": "Geomaticien et developpeur SIG passionne, je combine expertise en analyse spatiale, teledetection et developpement web pour transformer les donnees geospatiales en solutions concretes. Diplome d'un Master en Geomatique (Universite Paris 8) et fort d'une experience en instrumentation terrain chez Socotec Monitoring, je maitrise l'ensemble de la chaine de traitement des donnees geographiques.",
+    "title": "À propos",
+    "bio": "Géomaticien et développeur SIG passionné, je combine expertise en analyse spatiale, télédétection et développement web pour transformer les données géospatiales en solutions concrètes. Diplômé d'un Master en Géomatique (Université Paris 8) et fort d'une expérience en instrumentation terrain chez Socotec Monitoring, je maîtrise l'ensemble de la chaîne de traitement des données géographiques.",
     "photoPlaceholder": "Photo",
-    "interestsTitle": "Centres d'interet de recherche",
-    "interestsDescription": "Domaines qui me passionnent et dans lesquels je developpe mon expertise",
+    "interestsTitle": "Centres d'intérêt de recherche",
+    "interestsDescription": "Domaines qui me passionnent et dans lesquels je développe mon expertise",
     "interests": {
-      "geomatics": "Geomatique",
-      "gis": "Systemes d'Information Geographique",
-      "remoteSensing": "Teledetection",
-      "webDev": "Developpement Web",
+      "geomatics": "Géomatique",
+      "gis": "Systèmes d'Information Géographique",
+      "remoteSensing": "Télédétection",
+      "webDev": "Développement Web",
       "instrumentation": "Instrumentation"
     }
   },
   "resume": {
     "title": "Curriculum Vitae",
-    "download": "Telecharger CV",
-    "keySkills": "Competences cles",
+    "download": "Télécharger CV",
+    "keySkills": "Compétences clés",
     "languagesTitle": "Langues",
     "languages": {
-      "french": "Francais",
+      "french": "Français",
       "frenchLevel": "Courant (C1)",
       "english": "Anglais",
-      "englishLevel": "Intermediaire (B2)",
+      "englishLevel": "Intermédiaire (B2)",
       "romanian": "Roumain",
       "romanianLevel": "Langue maternelle"
     }
   },
   "portfolio": {
     "title": "Portfolio",
-    "description": "Ensemble de mes realisations",
-    "filterLabel": "Filtrer par categorie",
+    "description": "Ensemble de mes réalisations",
+    "filterLabel": "Filtrer par catégorie",
     "filterAll": "Tous",
-    "filterGeo": "Geomatique",
+    "filterGeo": "Géomatique",
     "filterDev": "Dev Web",
-    "filterBio": "Biomedical",
-    "noResults": "Aucun projet dans cette categorie.",
-    "imagePlaceholder": "Image a venir"
+    "filterBio": "Biomédical",
+    "noResults": "Aucun projet dans cette catégorie.",
+    "imagePlaceholder": "Image à venir"
   },
   "projectDetail": {
     "backToPortfolio": "Retour au portfolio",
     "sourceCode": "Code source",
-    "liveDemo": "Demo live",
+    "liveDemo": "Démo live",
     "report": "Rapport",
-    "previous": "Precedent",
+    "previous": "Précédent",
     "next": "Suivant",
     "projectNavigation": "Navigation entre projets"
   },
   "skills": {
-    "title": "Competences",
-    "description": "Technologies et outils que je maitrise"
+    "title": "Compétences",
+    "description": "Technologies et outils que je maîtrise"
   },
   "parcours": {
     "title": "Parcours",
-    "description": "Mon parcours professionnel et academique",
+    "description": "Mon parcours professionnel et académique",
     "items": {
       "master": {
-        "title": "Master Geomatique",
-        "place": "Universite Paris 8",
-        "description": "Analyse spatiale, teledetection, SIG, developpement d'applications geospatiales."
+        "title": "Master Géomatique",
+        "place": "Université Paris 8",
+        "description": "Analyse spatiale, télédétection, SIG, développement d'applications géospatiales."
       },
       "socotec": {
-        "title": "Technicien Geometre & Instrumentation",
+        "title": "Technicien Géomètre & Instrumentation",
         "place": "Socotec Monitoring (ex-Cementys)",
-        "description": "Monitoring structurel, instrumentation de capteurs, acquisitions terrain, traitement de donnees geodesiques."
+        "description": "Monitoring structurel, instrumentation de capteurs, acquisitions terrain, traitement de données géodésiques."
       },
       "licence": {
-        "title": "Licence Ingenierie Biomedicale",
-        "place": "Universitatea Tehnica a Moldovei",
-        "description": "Electronique, capteurs, programmation, traitement du signal applique au biomedical."
+        "title": "Licence Ingénierie Biomédicale",
+        "place": "Universitatea Tehnicǎ a Moldovei",
+        "description": "Électronique, capteurs, programmation, traitement du signal appliqué au biomédical."
       },
       "colegiul": {
         "title": "Informatique",
         "place": "Colegiul Politehnic",
-        "description": "Programmation, reseaux, bases de donnees, systemes d'exploitation."
+        "description": "Programmation, réseaux, bases de données, systèmes d'exploitation."
       }
     }
   },
   "projects": {
     "title": "Projets",
-    "description": "Selection de realisations",
+    "description": "Sélection de réalisations",
     "items": {
       "analyseSpatiale": {
-        "title": "Analyse Spatiale Multicritere -- Saint-Etienne",
-        "description": "Identification des zones optimales pour l'investissement immobilier et la location etudiante a Saint-Etienne. Methode AHP + agregation WLC sur 5 criteres (valeur fonciere, risque inondation, proximite universites/gares/bars) avec ArcGIS Pro et IDRISI. Projet M1 Geomatique, Universite Paris 8.",
-        "longDescription": "Ce projet de Master 1 Geomatique a l'Universite Paris 8 visait a identifier les zones optimales pour l'investissement immobilier et la location etudiante a Saint-Etienne.\n\nLa methodologie repose sur une analyse spatiale multicritere combinant la methode AHP (Analytic Hierarchy Process) pour la ponderation des criteres et l'agregation WLC (Weighted Linear Combination) sur 5 criteres : valeur fonciere, risque d'inondation, proximite aux universites, aux gares et aux bars.\n\nLes outils utilises incluent ArcGIS Pro pour le traitement SIG, IDRISI pour l'analyse multicritere, et les donnees ouvertes d'OpenStreetMap. Les resultats ont permis de cartographier les zones les plus propices a l'investissement selon differents profils de decisionnaires."
+        "title": "Analyse Spatiale Multicritère — Saint-Étienne",
+        "description": "Identification des zones optimales pour l'investissement immobilier et la location étudiante à Saint-Étienne. Méthode AHP + agrégation WLC sur 5 critères (valeur foncière, risque inondation, proximité universités/gares/bars) avec ArcGIS Pro et IDRISI. Projet M1 Géomatique, Université Paris 8.",
+        "longDescription": "Ce projet de Master 1 Géomatique à l'Université Paris 8 visait à identifier les zones optimales pour l'investissement immobilier et la location étudiante à Saint-Étienne.\n\nLa méthodologie repose sur une analyse spatiale multicritère combinant la méthode AHP (Analytic Hierarchy Process) pour la pondération des critères et l'agrégation WLC (Weighted Linear Combination) sur 5 critères : valeur foncière, risque d'inondation, proximité aux universités, aux gares et aux bars.\n\nLes outils utilisés incluent ArcGIS Pro pour le traitement SIG, IDRISI pour l'analyse multicritère, et les données ouvertes d'OpenStreetMap. Les résultats ont permis de cartographier les zones les plus propices à l'investissement selon différents profils de décisionnaires."
       },
       "teledetection": {
-        "title": "Teledetection Sentinel-2",
-        "description": "Analyse d'images satellites pour le suivi de la vegetation (NDVI) avec SNAP et Python.",
-        "longDescription": "Projet de teledetection utilisant les images du satellite Sentinel-2 pour le suivi de la vegetation via le calcul de l'indice NDVI (Normalized Difference Vegetation Index).\n\nLe traitement des images a ete realise avec le logiciel SNAP (Sentinel Application Platform) de l'ESA, incluant les corrections atmospheriques, le re-echantillonnage et le calcul des indices spectraux. Des scripts Python ont ete developpes pour automatiser l'analyse temporelle et generer des cartographies de l'evolution de la couverture vegetale."
+        "title": "Télédétection Sentinel-2",
+        "description": "Analyse d'images satellites pour le suivi de la végétation (NDVI) avec SNAP et Python.",
+        "longDescription": "Projet de télédétection utilisant les images du satellite Sentinel-2 pour le suivi de la végétation via le calcul de l'indice NDVI (Normalized Difference Vegetation Index).\n\nLe traitement des images a été réalisé avec le logiciel SNAP (Sentinel Application Platform) de l'ESA, incluant les corrections atmosphériques, le rééchantillonnage et le calcul des indices spectraux. Des scripts Python ont été développés pour automatiser l'analyse temporelle et générer des cartographies de l'évolution de la couverture végétale."
       },
       "cladPrimeco": {
         "title": "Clad-Primeco",
         "description": "Site web d'entreprise avec dashboard admin, gestion de contenu et e-commerce.",
-        "longDescription": "Developpement complet d'un site web professionnel pour l'entreprise Clad-Primeco, incluant un dashboard d'administration, la gestion de contenu et des fonctionnalites e-commerce.\n\nStack technique : React 18 avec TypeScript, Tailwind CSS pour le styling, Supabase pour le backend (authentification, base de donnees PostgreSQL, Edge Functions). Le site integre un systeme de contact securise avec Resend pour les emails et hCaptcha pour la protection anti-spam.\n\nLe deploiement est assure via Vercel avec un pipeline CI/CD automatise."
+        "longDescription": "Développement complet d'un site web professionnel pour l'entreprise Clad-Primeco, incluant un dashboard d'administration, la gestion de contenu et des fonctionnalités e-commerce.\n\nStack technique : React 18 avec TypeScript, Tailwind CSS pour le styling, Supabase pour le backend (authentification, base de données PostgreSQL, Edge Functions). Le site intègre un système de contact sécurisé avec Resend pour les emails et hCaptcha pour la protection anti-spam.\n\nLe déploiement est assuré via Vercel avec un pipeline CI/CD automatisé."
       }
     }
   },
@@ -130,15 +130,15 @@
     "email": "Email",
     "emailPlaceholder": "votre@email.com",
     "message": "Message",
-    "messagePlaceholder": "Decrivez votre projet ou votre demande...",
+    "messagePlaceholder": "Décrivez votre projet ou votre demande...",
     "send": "Envoyer"
   },
   "notFound": {
     "title": "Page introuvable",
-    "message": "La page que vous recherchez n'existe pas ou a ete deplacee.",
-    "backHome": "Retour a l'accueil"
+    "message": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
   },
   "footer": {
-    "rights": "Tous droits reserves."
+    "rights": "Tous droits réservés."
   }
 }
