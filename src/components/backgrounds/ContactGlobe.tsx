@@ -97,6 +97,7 @@ export function ContactGlobe({ cityNames = DEFAULT_CITY_NAMES, parisLabel = 'Par
     if (!ctx) return;
 
     let animId: number;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const startTime = Date.now();
 
     const dpr = window.devicePixelRatio || 1;
@@ -268,7 +269,7 @@ export function ContactGlobe({ cityNames = DEFAULT_CITY_NAMES, parisLabel = 'Par
           }
         }
 
-        animId = requestAnimationFrame(draw);
+        if (!prefersReduced) animId = requestAnimationFrame(draw);
       }
       draw();
     });

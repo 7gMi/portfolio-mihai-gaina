@@ -4,13 +4,16 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Linkedin, Github, Send, CheckCircle, AlertCircle, Clock, Globe } from 'lucide-react';
 import { ContactGlobe } from '../components/backgrounds/ContactGlobe';
 import { supabase } from '../lib/supabase';
+import { SOCIAL_LINKS } from '../data/constants';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 export function ContactPage() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [lastSubmit, setLastSubmit] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (status === 'success' || status === 'error') setStatus('idle');
@@ -19,17 +22,38 @@ export function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
 
-    const { error } = await supabase
-      .from('contact_messages')
-      .insert([{ name: formData.name, email: formData.email, message: formData.message }]);
+    // Honeypot check
+    if (honeypot) return;
 
-    if (error) {
+    // Rate limiting: 30s cooldown
+    if (Date.now() - lastSubmit < 30000) {
       setStatus('error');
       return;
     }
 
+    // Validation
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+
+    if (!name || name.length > 100) return;
+    if (!email || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+    if (!message || message.length > 2000) return;
+
+    setStatus('sending');
+
+    const { error } = await supabase
+      .from('contact_messages')
+      .insert([{ name, email, message }]);
+
+    if (error) {
+      console.error('[Contact Form]', error.message);
+      setStatus('error');
+      return;
+    }
+
+    setLastSubmit(Date.now());
     setStatus('success');
     setFormData({ name: '', email: '', message: '' });
   };
@@ -109,7 +133,7 @@ export function ContactPage() {
             {/* Social */}
             <div className="flex gap-3">
               <a
-                href="https://www.linkedin.com/in/mihai-gaina-032812188/"
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border-default bg-bg-card/30 text-text-muted transition-colors hover:text-primary hover:border-primary/40"
@@ -118,7 +142,7 @@ export function ContactPage() {
                 <Linkedin size={16} />
               </a>
               <a
-                href="https://github.com/7gMi"
+                href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border-default bg-bg-card/30 text-text-muted transition-colors hover:text-primary hover:border-primary/40"
@@ -157,6 +181,17 @@ export function ContactPage() {
 
           {/* Contact form */}
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Honeypot — hidden from humans */}
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              className="absolute -left-[9999px] h-0 w-0 opacity-0"
+              aria-hidden="true"
+            />
             <div>
               <label htmlFor="contact-name" className="mb-1.5 block text-xs font-medium text-text-secondary">
                 {t('contact.name')}

@@ -82,6 +82,7 @@ export function ParticleNetwork() {
 
     let animId: number;
     let rotation = -2;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const dpr = window.devicePixelRatio || 1;
     const resize = () => {
@@ -298,7 +299,7 @@ export function ParticleNetwork() {
         }
 
         rotation -= 0.03;
-        animId = requestAnimationFrame(draw);
+        if (!prefersReduced) animId = requestAnimationFrame(draw);
       }
 
       draw();

@@ -5,6 +5,7 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { Parcours } from '../components/sections/Parcours';
+import { CV_MAP } from '../data/constants';
 
 const keySkills = [
   'ArcGIS Pro', 'QGIS', 'PostGIS', 'React', 'TypeScript', 'Python',
@@ -22,11 +23,6 @@ export function ResumePage() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
 
-  const cvMap: Record<string, string> = {
-    fr: '/cv/MIHAI_GAINA_CV_FR.pdf',
-    en: '/cv/MIHAI_GAINA_CV_EN.pdf',
-    ro: '/cv/MIHAI_GAINA_CV_RO.pdf',
-  };
 
   return (
     <div className="pt-24">
@@ -36,7 +32,7 @@ export function ResumePage() {
           <SectionHeading title={t('resume.title')} />
           <Button
             variant="outline"
-            href={cvMap[lang] || cvMap.fr}
+            href={CV_MAP[lang] || CV_MAP.fr}
             download
           >
             {t('resume.download')}

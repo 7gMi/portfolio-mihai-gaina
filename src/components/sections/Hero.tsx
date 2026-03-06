@@ -4,16 +4,11 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { ParticleNetwork } from '../backgrounds/ParticleNetwork';
+import { CV_MAP, SOCIAL_LINKS } from '../../data/constants';
 
 export function Hero() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
-
-  const cvMap: Record<string, string> = {
-    fr: '/cv/MIHAI_GAINA_CV_FR.pdf',
-    en: '/cv/MIHAI_GAINA_CV_EN.pdf',
-    ro: '/cv/MIHAI_GAINA_CV_RO.pdf',
-  };
 
   return (
     <section
@@ -79,7 +74,7 @@ export function Hero() {
           </Link>
           <Button
             variant="outline"
-            href={cvMap[lang] || cvMap.fr}
+            href={CV_MAP[lang] || CV_MAP.fr}
             download
           >
             {t('hero.cv')}
@@ -95,7 +90,7 @@ export function Hero() {
           className="mt-10 flex items-center justify-center gap-5"
         >
           <a
-            href="https://www.linkedin.com/in/mihai-gaina-032812188/"
+            href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted transition-colors duration-150 hover:text-primary"
@@ -104,7 +99,7 @@ export function Hero() {
             <Linkedin size={22} />
           </a>
           <a
-            href="https://github.com/7gMi"
+            href={SOCIAL_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted transition-colors duration-150 hover:text-primary"
