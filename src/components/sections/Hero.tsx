@@ -35,9 +35,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl font-bold text-text-primary sm:text-6xl lg:text-7xl"
+          className="text-5xl font-bold sm:text-6xl lg:text-7xl"
         >
-          {t('hero.name')}
+          <span className="bg-gradient-to-r from-[#2dd4bf] to-[#38bdf8] bg-clip-text text-transparent">
+            {t('hero.name')}
+          </span>
         </motion.h1>
 
         <motion.p
