@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1628"/>
+      <stop offset="100%" style="stop-color:#1E3A5F"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2DD4BF"/>
+      <stop offset="100%" style="stop-color:#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative grid dots -->
+  <g opacity="0.08" fill="#38BDF8">
+    <circle cx="80" cy="80" r="2"/><circle cx="140" cy="80" r="2"/><circle cx="200" cy="80" r="2"/><circle cx="260" cy="80" r="2"/><circle cx="320" cy="80" r="2"/>
+    <circle cx="80" cy="140" r="2"/><circle cx="140" cy="140" r="2"/><circle cx="200" cy="140" r="2"/><circle cx="260" cy="140" r="2"/><circle cx="320" cy="140" r="2"/>
+    <circle cx="80" cy="200" r="2"/><circle cx="140" cy="200" r="2"/><circle cx="200" cy="200" r="2"/><circle cx="260" cy="200" r="2"/><circle cx="320" cy="200" r="2"/>
+    <circle cx="880" cy="430" r="2"/><circle cx="940" cy="430" r="2"/><circle cx="1000" cy="430" r="2"/><circle cx="1060" cy="430" r="2"/><circle cx="1120" cy="430" r="2"/>
+    <circle cx="880" cy="490" r="2"/><circle cx="940" cy="490" r="2"/><circle cx="1000" cy="490" r="2"/><circle cx="1060" cy="490" r="2"/><circle cx="1120" cy="490" r="2"/>
+    <circle cx="880" cy="550" r="2"/><circle cx="940" cy="550" r="2"/><circle cx="1000" cy="550" r="2"/><circle cx="1060" cy="550" r="2"/><circle cx="1120" cy="550" r="2"/>
+  </g>
+
+  <!-- Decorative globe outline -->
+  <g transform="translate(950, 280)" opacity="0.12" fill="none" stroke="#38BDF8" stroke-width="1.5">
+    <circle cx="0" cy="0" r="160"/>
+    <ellipse cx="0" cy="0" rx="160" ry="60"/>
+    <ellipse cx="0" cy="0" rx="100" ry="160"/>
+    <ellipse cx="0" cy="0" rx="40" ry="160"/>
+    <line x1="-160" y1="0" x2="160" y2="0"/>
+    <line x1="-150" y1="-60" x2="150" y2="-60"/>
+    <line x1="-150" y1="60" x2="150" y2="60"/>
+  </g>
+
+  <!-- Accent line -->
+  <rect x="80" y="235" width="80" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Name -->
+  <text x="80" y="210" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF" letter-spacing="-1">Mihai Gaina</text>
+
+  <!-- Title -->
+  <text x="80" y="290" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#2DD4BF" letter-spacing="2">DEVELOPPEUR SIG &amp; WEB</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="340" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="400" fill="#94A3B8">Geomaticien | Master Geomatique Paris 8</text>
+
+  <!-- Tech tags -->
+  <g transform="translate(80, 400)">
+    <rect x="0" y="0" width="80" height="32" rx="6" fill="#2DD4BF" opacity="0.15"/>
+    <text x="40" y="21" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#2DD4BF" text-anchor="middle">React</text>
+
+    <rect x="92" y="0" width="110" height="32" rx="6" fill="#2DD4BF" opacity="0.15"/>
+    <text x="147" y="21" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#2DD4BF" text-anchor="middle">TypeScript</text>
+
+    <rect x="214" y="0" width="78" height="32" rx="6" fill="#2DD4BF" opacity="0.15"/>
+    <text x="253" y="21" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#2DD4BF" text-anchor="middle">QGIS</text>
+
+    <rect x="304" y="0" width="100" height="32" rx="6" fill="#2DD4BF" opacity="0.15"/>
+    <text x="354" y="21" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#2DD4BF" text-anchor="middle">ArcGIS Pro</text>
+
+    <rect x="416" y="0" width="82" height="32" rx="6" fill="#2DD4BF" opacity="0.15"/>
+    <text x="457" y="21" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#2DD4BF" text-anchor="middle">Python</text>
+
+    <rect x="510" y="0" width="70" height="32" rx="6" fill="#2DD4BF" opacity="0.15"/>
+    <text x="545" y="21" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#2DD4BF" text-anchor="middle">d3-geo</text>
+  </g>
+
+  <!-- URL -->
+  <text x="80" y="560" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="400" fill="#64748B">portfolio-gainas-projects.vercel.app</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="620" width="1200" height="10" fill="url(#accent)"/>
+</svg>
