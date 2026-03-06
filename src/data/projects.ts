@@ -19,7 +19,7 @@ export const projects: Project[] = [
     descriptionKey: 'projects.items.analyseSpatiale.description',
     category: 'geomatique',
     tags: ['ArcGIS Pro', 'IDRISI', 'AHP', 'WLC', 'IDW', 'OpenStreetMap'],
-    image: '/images/projets/geomatique/analyse-spatiale.jpg',
+    image: '/images/projets/geomatique/analyse-spatiale.png',
     report: '/reports/analyse-spatiale-multicritere.pdf',
     date: '2025',
     featured: true,
