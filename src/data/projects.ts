@@ -7,6 +7,9 @@ export interface Project {
   image?: string;
   github?: string;
   live?: string;
+  report?: string;
+  date?: string;
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
@@ -15,8 +18,11 @@ export const projects: Project[] = [
     titleKey: 'projects.items.analyseSpatiale.title',
     descriptionKey: 'projects.items.analyseSpatiale.description',
     category: 'geomatique',
-    tags: ['QGIS', 'Python', 'PostGIS'],
+    tags: ['ArcGIS Pro', 'IDRISI', 'AHP', 'WLC', 'IDW', 'OpenStreetMap'],
     image: '/images/projets/geomatique/analyse-spatiale.jpg',
+    report: '/reports/analyse-spatiale-multicritere.pdf',
+    date: '2025',
+    featured: true,
   },
   {
     id: 'teledetection',

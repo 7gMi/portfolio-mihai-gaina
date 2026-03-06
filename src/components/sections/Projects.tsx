@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, FileText, Github } from 'lucide-react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
 import { projects } from '../../data/projects';
@@ -34,7 +34,7 @@ export function Projects() {
                 <h3 className="text-lg font-semibold text-text-primary">
                   {t(project.titleKey)}
                 </h3>
-                <p className="mt-1 text-sm text-text-secondary line-clamp-2">
+                <p className="mt-1 text-sm text-text-secondary line-clamp-3">
                   {t(project.descriptionKey)}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
@@ -42,7 +42,7 @@ export function Projects() {
                     <Badge key={tag} className="text-[0.65rem]">{tag}</Badge>
                   ))}
                 </div>
-                {(project.github || project.live) && (
+                {(project.github || project.live || project.report) && (
                   <div className="mt-4 flex gap-3">
                     {project.github && (
                       <a
@@ -64,6 +64,17 @@ export function Projects() {
                         aria-label="Live demo"
                       >
                         <ExternalLink size={18} />
+                      </a>
+                    )}
+                    {project.report && (
+                      <a
+                        href={project.report}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-text-muted transition-colors hover:text-primary"
+                        aria-label="Report PDF"
+                      >
+                        <FileText size={18} />
                       </a>
                     )}
                   </div>

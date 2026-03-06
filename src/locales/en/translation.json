@@ -49,8 +49,8 @@
     "description": "Selected works",
     "items": {
       "analyseSpatiale": {
-        "title": "Multi-Criteria Spatial Analysis",
-        "description": "Identification of optimal zones using multi-criteria weighting in QGIS and PostGIS."
+        "title": "Multi-Criteria Spatial Analysis — Saint-Étienne",
+        "description": "Identifying optimal zones for real estate investment and student housing in Saint-Étienne. AHP weighting + WLC aggregation on 5 criteria (land value, flood risk, proximity to universities/stations/bars) using ArcGIS Pro and IDRISI. M1 Geomatics project, Université Paris 8."
       },
       "teledetection": {
         "title": "Sentinel-2 Remote Sensing",

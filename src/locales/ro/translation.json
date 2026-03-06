@@ -49,8 +49,8 @@
     "description": "Lucrări selectate",
     "items": {
       "analyseSpatiale": {
-        "title": "Analiză Spațială Multicriterială",
-        "description": "Identificarea zonelor optime prin ponderare multicriterială în QGIS și PostGIS."
+        "title": "Analiză Spațială Multicriterială — Saint-Étienne",
+        "description": "Identificarea zonelor optime pentru investiții imobiliare și locuințe studențești în Saint-Étienne. Ponderare AHP + agregare WLC pe 5 criterii (valoare funciară, risc inundații, proximitate universități/gări/baruri) cu ArcGIS Pro și IDRISI. Proiect M1 Geomatică, Université Paris 8."
       },
       "teledetection": {
         "title": "Teledetecție Sentinel-2",

@@ -49,8 +49,8 @@
     "description": "Sélection de réalisations",
     "items": {
       "analyseSpatiale": {
-        "title": "Analyse Spatiale Multicritère",
-        "description": "Identification de zones optimales via pondération multicritère sous QGIS et PostGIS."
+        "title": "Analyse Spatiale Multicritère — Saint-Étienne",
+        "description": "Identification des zones optimales pour l'investissement immobilier et la location étudiante à Saint-Étienne. Méthode AHP + agrégation WLC sur 5 critères (valeur foncière, risque inondation, proximité universités/gares/bars) avec ArcGIS Pro et IDRISI. Projet M1 Géomatique, Université Paris 8."
       },
       "teledetection": {
         "title": "Télédétection Sentinel-2",
