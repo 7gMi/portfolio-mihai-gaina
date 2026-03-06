@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Portfolio — Mihai Gaina
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio professionnel de Mihai Gaina, Developpeur SIG & Web / Geomaticien.
 
-Currently, two official plugins are available:
+**Site live** : [portfolio-gainas-projects.vercel.app](https://portfolio-gainas-projects.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack technique
 
-## React Compiler
+- **Frontend** : React 19, TypeScript, Vite 7
+- **Styling** : Tailwind CSS v4, Framer Motion
+- **i18n** : i18next (FR / EN / RO)
+- **Backend** : Supabase (PostgreSQL, Auth)
+- **Animations** : Canvas API, d3-geo (globe interactif)
+- **Deploiement** : Vercel (CI/CD)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Fonctionnalites
 
-## Expanding the ESLint configuration
+- Globe 3D interactif avec particules et arcs animes (d3-geo + Canvas)
+- Portfolio avec filtrage par categorie (Geomatique, Dev Web, Biomedical)
+- Formulaire de contact (Supabase)
+- Telechargement du CV adapte a la langue
+- Internationalisation complete en 3 langues
+- Code splitting et lazy loading des routes
+- Accessibilite : skip link, focus trap, ARIA, navigation clavier
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Structure du projet
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  components/
+    backgrounds/    # Animations Canvas (globe, particules, radar)
+    layout/         # Navbar, Footer
+    sections/       # Hero, Skills, Parcours, Contact
+    ui/             # Badge, Button, SectionHeading
+    utils/          # Breadcrumb, PageLoader
+  data/             # projects.ts, parcours.ts, skills.ts
+  lib/              # supabase.ts, i18n.ts
+  locales/          # fr/, en/, ro/ (fichiers de traduction)
+  pages/            # HomePage, AboutPage, PortfolioPage, etc.
+public/
+  images/           # Logos, projets, photos
+  cv/               # PDF du CV (FR, EN, RO)
+  reports/          # Rapports de projets (PDF)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/7gMi/portfolio-mihai-gaina.git
+cd portfolio-mihai-gaina
+npm install
 ```
+
+## Variables d'environnement
+
+Creer un fichier `.env.local` :
+
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+## Developpement
+
+```bash
+npm run dev      # Serveur de dev (Vite)
+npm run build    # Build de production (tsc + vite build)
+npm run preview  # Preview du build
+npm run lint     # ESLint
+```
+
+## Deploiement
+
+Le projet est deploye automatiquement sur Vercel a chaque push sur `main`.
+
+## Licence
+
+Projet personnel — tous droits reserves.
