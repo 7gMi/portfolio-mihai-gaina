@@ -1,21 +1,37 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Button } from '../components/ui/Button';
+import { supabase } from '../lib/supabase';
+
+type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 export function ContactPage() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<FormStatus>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic to be implemented
+    setStatus('sending');
+
+    const { error } = await supabase
+      .from('contact_messages')
+      .insert([{ name: formData.name, email: formData.email, message: formData.message }]);
+
+    if (error) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('success');
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -61,6 +77,29 @@ export function ContactPage() {
             </div>
           </motion.div>
 
+          {/* Status messages */}
+          {status === 'success' && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6 flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-700"
+            >
+              <CheckCircle size={18} />
+              {t('contact.success')}
+            </motion.div>
+          )}
+
+          {status === 'error' && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6 flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+            >
+              <AlertCircle size={18} />
+              {t('contact.error')}
+            </motion.div>
+          )}
+
           {/* Contact form */}
           <motion.form
             onSubmit={handleSubmit}
@@ -83,7 +122,8 @@ export function ContactPage() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                disabled={status === 'sending'}
+                className="w-full rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
                 placeholder={t('contact.namePlaceholder')}
               />
             </div>
@@ -101,7 +141,8 @@ export function ContactPage() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                disabled={status === 'sending'}
+                className="w-full rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
                 placeholder={t('contact.emailPlaceholder')}
               />
             </div>
@@ -119,15 +160,17 @@ export function ContactPage() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full resize-none rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                disabled={status === 'sending'}
+                className="w-full resize-none rounded-lg border border-border-default bg-bg-base px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50"
                 placeholder={t('contact.messagePlaceholder')}
               />
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-sm text-text-inverted transition-all duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              disabled={status === 'sending'}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-sm text-text-inverted transition-all duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t('contact.send')}
+              {status === 'sending' ? t('contact.sending') : t('contact.send')}
               <Send size={16} />
             </button>
           </motion.form>

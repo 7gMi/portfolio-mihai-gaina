@@ -136,7 +136,10 @@
     "emailPlaceholder": "votre@email.com",
     "message": "Message",
     "messagePlaceholder": "Décrivez votre projet ou votre demande...",
-    "send": "Envoyer"
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Une erreur est survenue. Veuillez réessayer."
   },
   "notFound": {
     "title": "Page introuvable",

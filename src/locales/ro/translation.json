@@ -136,7 +136,10 @@
     "emailPlaceholder": "email@exemplu.com",
     "message": "Mesaj",
     "messagePlaceholder": "Descrie proiectul sau cererea ta...",
-    "send": "Trimite"
+    "send": "Trimite",
+    "sending": "Se trimite...",
+    "success": "Mesajul a fost trimis cu succes!",
+    "error": "A apărut o eroare. Vă rugăm să încercați din nou."
   },
   "notFound": {
     "title": "Pagină negăsită",
