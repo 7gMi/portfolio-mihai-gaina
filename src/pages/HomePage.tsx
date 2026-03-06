@@ -34,6 +34,8 @@ export function HomePage() {
                       <img
                         src={project.image}
                         alt={t(project.titleKey)}
+                        width={640}
+                        height={360}
                         className="h-full w-full object-cover"
                         loading="lazy"
                       />
