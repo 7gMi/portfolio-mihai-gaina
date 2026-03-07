@@ -31,6 +31,7 @@ export function ParcoursBg({ locations, labels, activeIndex }: Props) {
   const drawRef = useRef<(() => void) | null>(null);
   const cursorRef = useRef(0);
   const activeRef = useRef(activeIndex);
+  const bgCacheRef = useRef<{ canvas: HTMLCanvasElement | null; w: number; h: number }>({ canvas: null, w: 0, h: 0 });
 
   useEffect(() => { activeRef.current = activeIndex; }, [activeIndex]);
   useEffect(() => { visibleRef.current = isVisible; }, [isVisible]);
@@ -69,20 +70,31 @@ export function ParcoursBg({ locations, labels, activeIndex }: Props) {
           .translate([w / 2, h / 2])
           .scale(Math.min(w, h) * 3);
 
-        const pathGen = geoPath(projection, ctx!);
-
         ctx!.clearRect(0, 0, w, h);
 
-        // Draw country shapes
-        for (const feat of (countries as any).features) {
-          ctx!.beginPath();
-          pathGen(feat);
-          ctx!.fillStyle = 'rgba(56, 189, 248, 0.06)';
-          ctx!.fill();
-          ctx!.strokeStyle = 'rgba(56, 189, 248, 0.18)';
-          ctx!.lineWidth = 0.6;
-          ctx!.stroke();
+        // Pre-render countries to offscreen canvas (only on resize)
+        const cache = bgCacheRef.current;
+        if (!cache.canvas || cache.w !== w || cache.h !== h) {
+          const offscreen = document.createElement('canvas');
+          offscreen.width = w * dpr;
+          offscreen.height = h * dpr;
+          const offCtx = offscreen.getContext('2d')!;
+          offCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          const offPath = geoPath(projection, offCtx);
+          for (const feat of (countries as any).features) {
+            offCtx.beginPath();
+            offPath(feat);
+            offCtx.fillStyle = 'rgba(56, 189, 248, 0.06)';
+            offCtx.fill();
+            offCtx.strokeStyle = 'rgba(56, 189, 248, 0.18)';
+            offCtx.lineWidth = 0.6;
+            offCtx.stroke();
+          }
+          bgCacheRef.current = { canvas: offscreen, w, h };
         }
+
+        // Draw cached countries (fast drawImage instead of ~200 polygons)
+        ctx!.drawImage(bgCacheRef.current.canvas!, 0, 0, w, h);
 
         // Smooth cursor movement
         const cursorSpeed = prefersReduced ? 1 : 0.04;
