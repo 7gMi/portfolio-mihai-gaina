@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
+import { useTheme } from '../../hooks/useTheme';
 
 const NAV_ITEMS = [
   { to: '/', key: 'nav.home' },
@@ -15,6 +16,7 @@ const NAV_ITEMS = [
 export function Navbar() {
   const { t } = useTranslation();
   const { pathname } = useLocation();
+  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -132,9 +134,16 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop language + mobile burger */}
+          {/* Desktop language + theme + mobile burger */}
           <div className="flex items-center gap-3">
             <LanguageSwitcher className="hidden md:flex" />
+            <button
+              onClick={toggleTheme}
+              className="hidden rounded-md p-2 text-text-secondary transition-colors hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 md:block"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="rounded-md p-2 text-text-secondary transition-colors hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 md:hidden"
@@ -166,7 +175,16 @@ export function Navbar() {
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <LanguageSwitcher className="mb-6" />
+        <div className="mb-6 flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            onClick={toggleTheme}
+            className="rounded-md p-2 text-text-secondary transition-colors hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
         <ul className="flex flex-col gap-2">
           {NAV_ITEMS.map(({ to, key }) => (
             <li key={to}>
