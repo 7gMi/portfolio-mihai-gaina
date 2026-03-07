@@ -89,24 +89,34 @@
     "description": "My professional and academic journey",
     "items": {
       "master": {
-        "title": "Master's in Geomatics",
-        "place": "Universite Paris 8",
-        "description": "Spatial analysis, remote sensing, GIS, geospatial application development."
+        "title": "Master's in Geomatics (G2M)",
+        "place": "Université Paris 8 — Saint-Denis",
+        "description": "Multicriteria spatial analysis, satellite remote sensing (Sentinel-2), advanced GIS and geospatial web application development. Field projects and applied research."
       },
       "socotec": {
         "title": "Survey Technician & Instrumentation",
-        "place": "Socotec Monitoring (ex-Cementys)",
-        "description": "Structural monitoring, sensor instrumentation, field acquisition, geodetic data processing."
+        "place": "Socotec Monitoring (ex-Cementys) — Palaiseau",
+        "description": "5.5 years on major infrastructure projects (Metro L15, L16, EOLE, Tisséo). Georeferenced data collection and processing, Python workflow automation with 40% efficiency gain."
       },
       "licence": {
         "title": "Bachelor's in Biomedical Engineering",
-        "place": "Technical University of Moldova",
-        "description": "Electronics, sensors, programming, biomedical signal processing."
+        "place": "Technical University of Moldova — Chișinău",
+        "description": "Training in electronics, biomedical sensors, programming and signal processing. Graduated with Honours."
+      },
+      "goImobil": {
+        "title": "Real Estate Agent",
+        "place": "Go Imobil — Chișinău",
+        "description": "Writing and publishing real estate listings, organizing property viewings with potential buyers and tenants. Property evaluation and market value estimation."
+      },
+      "moldtelecom": {
+        "title": "IT Support Technician",
+        "place": "Moldtelecom — Chișinău",
+        "description": "Technical support and network diagnostics for Moldova's national telecom operator (permanent contract). Rapid incident resolution in collaboration with internal teams."
       },
       "colegiul": {
-        "title": "Computer Science",
-        "place": "Colegiul Politehnic",
-        "description": "Programming, networks, databases, operating systems."
+        "title": "IT Diploma (BTS equivalent)",
+        "place": "Colegiul Politehnic — Chișinău",
+        "description": "Programming, networks, databases and operating systems. Graduated with High Honours."
       }
     }
   },
@@ -168,5 +178,11 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "a11y": {
+    "title": "Accessibility",
+    "fontSize": "Text size",
+    "highContrast": "High contrast",
+    "reduceTransparency": "Reduce transparency"
   }
 }

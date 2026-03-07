@@ -89,24 +89,34 @@
     "description": "Parcursul meu profesional și academic",
     "items": {
       "master": {
-        "title": "Master Geomatică",
-        "place": "Université Paris 8",
-        "description": "Analiză spațială, teledetecție, SIG, dezvoltare de aplicații geospațiale."
+        "title": "Master Geomatică (G2M)",
+        "place": "Université Paris 8 — Saint-Denis",
+        "description": "Analiză spațială multicriterii, teledetecție satelitară (Sentinel-2), SIG avansat și dezvoltare aplicații geospațiale web. Proiecte de teren și cercetare aplicată."
       },
       "socotec": {
         "title": "Tehnician Topograf & Instrumentație",
-        "place": "Socotec Monitoring (ex-Cementys)",
-        "description": "Monitorizare structurală, instrumentație senzori, achiziții teren, prelucrare date geodezice."
+        "place": "Socotec Monitoring (ex-Cementys) — Palaiseau",
+        "description": "5,5 ani pe proiecte mari de infrastructură (Metrou L15, L16, EOLE, Tisséo). Colectare și prelucrare date georeferențiate, automatizare Python a fluxurilor cu un câștig de 40%."
       },
       "licence": {
         "title": "Licență Inginerie Biomedicală",
-        "place": "Universitatea Tehnică a Moldovei",
-        "description": "Electronică, senzori, programare, prelucrare semnal aplicată la biomedical."
+        "place": "Universitatea Tehnică a Moldovei — Chișinău",
+        "description": "Formare în electronică, senzori biomedicali, programare și prelucrare semnal. Diplomă cu Mențiune."
+      },
+      "goImobil": {
+        "title": "Agent Imobiliar",
+        "place": "Go Imobil — Chișinău",
+        "description": "Redactarea și difuzarea anunțurilor imobiliare, organizarea vizitelor cu potențiali cumpărători și chiriași. Evaluarea proprietăților și estimarea valorii pe piața imobiliară."
+      },
+      "moldtelecom": {
+        "title": "Tehnician Suport Informatic",
+        "place": "Moldtelecom — Chișinău",
+        "description": "Asistență tehnică și diagnostic rețea pentru operatorul telecom național al Moldovei (CDI). Rezolvare rapidă a incidentelor în colaborare cu echipele interne."
       },
       "colegiul": {
-        "title": "Informatică",
-        "place": "Colegiul Politehnic",
-        "description": "Programare, rețele, baze de date, sisteme de operare."
+        "title": "Diplomă Informatică (BTS)",
+        "place": "Colegiul Politehnic — Chișinău",
+        "description": "Programare, rețele, baze de date și sisteme de operare. Diplomă cu Mențiune Foarte Bine."
       }
     }
   },
@@ -168,5 +178,11 @@
   },
   "footer": {
     "rights": "Toate drepturile rezervate."
+  },
+  "a11y": {
+    "title": "Accesibilitate",
+    "fontSize": "Dimensiune text",
+    "highContrast": "Contrast ridicat",
+    "reduceTransparency": "Reduce transparența"
   }
 }

@@ -55,7 +55,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <title>Mihai Gaina — Développeur SIG & Web | Géomaticien</title>
     <script>
-      (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
+      (function(){
+        var d=document.documentElement;
+        var t=localStorage.getItem('theme');
+        if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches))d.classList.add('dark');
+        try{var a=JSON.parse(localStorage.getItem('a11y'));
+          if(a){if(a.fontSize)d.style.fontSize=['100%','112.5%','125%'][a.fontSize];if(a.highContrast)d.classList.add('high-contrast');if(a.reduceTransparency)d.classList.add('reduce-transparency')}
+        }catch(e){}
+      })();
     </script>
   </head>
   <body>

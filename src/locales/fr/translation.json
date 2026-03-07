@@ -89,24 +89,34 @@
     "description": "Mon parcours professionnel et académique",
     "items": {
       "master": {
-        "title": "Master Géomatique",
-        "place": "Université Paris 8",
-        "description": "Analyse spatiale, télédétection, SIG, développement d'applications géospatiales."
+        "title": "Master Géomatique (G2M)",
+        "place": "Université Paris 8 — Saint-Denis",
+        "description": "Analyse spatiale multicritère, télédétection satellite (Sentinel-2), SIG avancé et développement d'applications géospatiales web. Projets terrain et recherche appliquée."
       },
       "socotec": {
         "title": "Technicien Géomètre & Instrumentation",
-        "place": "Socotec Monitoring (ex-Cementys)",
-        "description": "Monitoring structurel, instrumentation de capteurs, acquisitions terrain, traitement de données géodésiques."
+        "place": "Socotec Monitoring (ex-Cementys) — Palaiseau",
+        "description": "5,5 ans sur des grands projets d'infrastructure (Métro L15, L16, EOLE, Tisséo). Collecte et traitement de données géoréférencées, automatisation Python des workflows avec un gain de 40%."
       },
       "licence": {
         "title": "Licence Ingénierie Biomédicale",
-        "place": "Universitatea Tehnicǎ a Moldovei",
-        "description": "Électronique, capteurs, programmation, traitement du signal appliqué au biomédical."
+        "place": "Universitatea Tehnicǎ a Moldovei — Chișinău",
+        "description": "Formation en électronique, capteurs biomédicaux, programmation et traitement du signal. Mention Bien."
+      },
+      "goImobil": {
+        "title": "Agent Immobilier",
+        "place": "Go Imobil — Chișinău",
+        "description": "Rédaction et diffusion d'annonces immobilières, organisation des visites avec acheteurs et locataires potentiels. Évaluation des propriétés et estimation de leur valeur sur le marché immobilier."
+      },
+      "moldtelecom": {
+        "title": "Technicien Support Informatique",
+        "place": "Moldtelecom — Chișinău",
+        "description": "Assistance technique et diagnostic réseau pour l'opérateur télécom national moldave (CDI). Résolution rapide d'incidents en collaboration avec les équipes internes."
       },
       "colegiul": {
-        "title": "Informatique",
-        "place": "Colegiul Politehnic",
-        "description": "Programmation, réseaux, bases de données, systèmes d'exploitation."
+        "title": "BTS Informatique",
+        "place": "Colegiul Politehnic — Chișinău",
+        "description": "Programmation, réseaux, bases de données et systèmes d'exploitation. Mention Très Bien."
       }
     }
   },
@@ -168,5 +178,11 @@
   },
   "footer": {
     "rights": "Tous droits réservés."
+  },
+  "a11y": {
+    "title": "Accessibilité",
+    "fontSize": "Taille du texte",
+    "highContrast": "Contraste élevé",
+    "reduceTransparency": "Réduire la transparence"
   }
 }

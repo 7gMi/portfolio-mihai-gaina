@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Eye } from 'lucide-react';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
+import { AccessibilityPanel } from '../ui/AccessibilityPanel';
 import { useTheme } from '../../hooks/useTheme';
 
 const NAV_ITEMS = [
@@ -19,6 +20,7 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [a11yOpen, setA11yOpen] = useState(false);
 
   const isActive = (to: string) => {
     if (to === '/') return pathname === '/';
@@ -139,10 +141,26 @@ export function Navbar() {
             <LanguageSwitcher className="hidden md:flex" />
             <button
               onClick={toggleTheme}
-              className="hidden rounded-md p-2 text-text-secondary transition-colors hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 md:block"
+              className={`hidden rounded-md p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 md:block ${
+                theme === 'dark'
+                  ? 'bg-primary/15 text-primary'
+                  : 'text-text-secondary hover:text-text-primary'
+              }`}
               aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <button
+              onClick={() => setA11yOpen(!a11yOpen)}
+              className={`hidden rounded-md p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 md:block ${
+                a11yOpen
+                  ? 'bg-primary/15 text-primary'
+                  : 'text-text-secondary hover:text-text-primary'
+              }`}
+              aria-label="Accessibility settings"
+              aria-expanded={a11yOpen}
+            >
+              <Eye size={20} />
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -179,10 +197,26 @@ export function Navbar() {
           <LanguageSwitcher />
           <button
             onClick={toggleTheme}
-            className="rounded-md p-2 text-text-secondary transition-colors hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className={`rounded-md p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
+              theme === 'dark'
+                ? 'bg-primary/15 text-primary'
+                : 'text-text-secondary hover:text-text-primary'
+            }`}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            onClick={() => setA11yOpen(!a11yOpen)}
+            className={`rounded-md p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
+              a11yOpen
+                ? 'bg-primary/15 text-primary'
+                : 'text-text-secondary hover:text-text-primary'
+            }`}
+            aria-label="Accessibility settings"
+            aria-expanded={a11yOpen}
+          >
+            <Eye size={20} />
           </button>
         </div>
         <ul className="flex flex-col gap-2">
@@ -202,6 +236,9 @@ export function Navbar() {
           ))}
         </ul>
       </div>
+
+      {/* Accessibility panel */}
+      <AccessibilityPanel open={a11yOpen} onClose={() => setA11yOpen(false)} />
     </>
   );
 }

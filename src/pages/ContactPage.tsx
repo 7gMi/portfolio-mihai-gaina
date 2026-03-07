@@ -59,12 +59,12 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-24">
+    <div style={{ paddingTop: '96px' }}>
       {/* Two-column layout: animation LEFT, content RIGHT */}
-      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-stretch px-4 py-8" style={{ minHeight: '75vh' }}>
+      <div className="mx-auto flex flex-col lg:flex-row lg:items-start" style={{ maxWidth: '1280px', padding: '32px 16px', minHeight: '75vh' }}>
 
-        {/* LEFT — Animation */}
-        <div className="relative flex-1 overflow-hidden rounded-l-2xl lg:min-h-0" style={{ minHeight: '400px' }}>
+        {/* LEFT — Animation (fixed height, immune to font-size changes) */}
+        <div className="relative flex-1 overflow-hidden rounded-l-2xl" style={{ height: '75vh', minHeight: '400px', maxHeight: '700px' }}>
           <ContactGlobe
             parisLabel={t('cities.paris')}
             cityNames={{
@@ -85,7 +85,8 @@ export function ContactPage() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex w-full flex-col justify-center gap-8 rounded-r-2xl border border-border-default bg-bg-card/60 p-8 pl-10 backdrop-blur-sm lg:w-[480px] lg:shrink-0"
+          className="flex w-full flex-col justify-center rounded-r-2xl border border-border-default bg-bg-card/60 backdrop-blur-sm lg:shrink-0"
+          style={{ gap: '32px', padding: '32px 32px 32px 40px', maxWidth: '480px' }}
         >
           {/* Description */}
           <div className="space-y-6">

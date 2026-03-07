@@ -124,6 +124,42 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+/* High contrast mode */
+.high-contrast {
+  --color-text-primary: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-text-muted: #333333;
+  --color-border-default: #000000;
+  --color-border-subtle: #666666;
+  --color-primary: #0044cc;
+}
+.dark.high-contrast {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e0e0e0;
+  --color-text-muted: #cccccc;
+  --color-border-default: #ffffff;
+  --color-border-subtle: #aaaaaa;
+  --color-primary: #60a5fa;
+  --color-bg-base: #000000;
+  --color-bg-surface: #111111;
+  --color-bg-card: #111111;
+  --color-bg-subtle: #111111;
+}
+
+/* Reduce transparency mode */
+.reduce-transparency .backdrop-blur-md,
+.reduce-transparency .backdrop-blur-sm {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.reduce-transparency [class*="bg-bg-base/"],
+.reduce-transparency [class*="bg-bg-card/"] {
+  opacity: 1 !important;
+}
+.reduce-transparency .bg-bg-base\/80 {
+  background-color: var(--color-bg-base) !important;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

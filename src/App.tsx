@@ -18,6 +18,9 @@ const BackgroundPreview = import.meta.env.DEV
 const ContactBgPreview = import.meta.env.DEV
   ? lazy(() => import('./pages/ContactBgPreview').then(m => ({ default: m.ContactBgPreview })))
   : null;
+const ParcoursMapPreview = import.meta.env.DEV
+  ? lazy(() => import('./pages/ParcoursMapPreview').then(m => ({ default: m.ParcoursMapPreview })))
+  : null;
 
 function PageLoader() {
   return (
@@ -43,10 +46,11 @@ export default function App() {
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              {import.meta.env.DEV && BackgroundPreview && ContactBgPreview && (
+              {import.meta.env.DEV && BackgroundPreview && ContactBgPreview && ParcoursMapPreview && (
                 <>
                   <Route path="/bg-preview" element={<BackgroundPreview />} />
                   <Route path="/contact-bg-preview" element={<ContactBgPreview />} />
+                  <Route path="/parcours-map-preview" element={<ParcoursMapPreview />} />
                 </>
               )}
               <Route path="*" element={<NotFoundPage />} />
